@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f",
-    "dev": "npx wrangler pages dev --kv URLS"
+    "dev": "npx wrangler pages dev ./public --kv URLS"
   },
   "dependencies": {
     "firebase-firestore-lite": "latest"
