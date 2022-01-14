@@ -1,221 +1,910 @@
-module.exports = 
-/******/ (function(modules) { // webpackBootstrap
-/******/    // The module cache
-/******/    var installedModules = {};
-/******/
-/******/    // The require function
-/******/    function __webpack_require__(moduleId) {
-/******/
-/******/        // Check if module is in cache
-/******/        if(installedModules[moduleId]) {
-/******/            return installedModules[moduleId].exports;
-/******/        }
-/******/        // Create a new module (and put it into the cache)
-/******/        var module = installedModules[moduleId] = {
-/******/            i: moduleId,
-/******/            l: false,
-/******/            exports: {}
-/******/        };
-/******/
-/******/        // Execute the module function
-/******/        modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/        // Flag the module as loaded
-/******/        module.l = true;
-/******/
-/******/        // Return the exports of the module
-/******/        return module.exports;
-/******/    }
-/******/
-/******/
-/******/    // expose the modules object (__webpack_modules__)
-/******/    __webpack_require__.m = modules;
-/******/
-/******/    // expose the module cache
-/******/    __webpack_require__.c = installedModules;
-/******/
-/******/    // define getter function for harmony exports
-/******/    __webpack_require__.d = function(exports, name, getter) {
-/******/        if(!__webpack_require__.o(exports, name)) {
-/******/            Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/        }
-/******/    };
-/******/
-/******/    // define __esModule on exports
-/******/    __webpack_require__.r = function(exports) {
-/******/        if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/            Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/        }
-/******/        Object.defineProperty(exports, '__esModule', { value: true });
-/******/    };
-/******/
-/******/    // create a fake namespace object
-/******/    // mode & 1: value is a module id, require it
-/******/    // mode & 2: merge all properties of value into the ns
-/******/    // mode & 4: return value when already ns object
-/******/    // mode & 8|1: behave like require
-/******/    __webpack_require__.t = function(value, mode) {
-/******/        if(mode & 1) value = __webpack_require__(value);
-/******/        if(mode & 8) return value;
-/******/        if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/        var ns = Object.create(null);
-/******/        __webpack_require__.r(ns);
-/******/        Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/        if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/        return ns;
-/******/    };
-/******/
-/******/    // getDefaultExport function for compatibility with non-harmony modules
-/******/    __webpack_require__.n = function(module) {
-/******/        var getter = module && module.__esModule ?
-/******/            function getDefault() { return module['default']; } :
-/******/            function getModuleExports() { return module; };
-/******/        __webpack_require__.d(getter, 'a', getter);
-/******/        return getter;
-/******/    };
-/******/
-/******/    // Object.prototype.hasOwnProperty.call
-/******/    __webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/    // __webpack_public_path__
-/******/    __webpack_require__.p = "";
-/******/
-/******/
-/******/    // Load entry module and return exports
-/******/    return __webpack_require__(__webpack_require__.s = "./build.js");
-/******/ })
-/************************************************************************/
-/******/ ({
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __esm = (fn, res) => function __init() {
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+};
+var __commonJS = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __reExport = (target, module, copyDefault, desc) => {
+  if (module && typeof module === "object" || typeof module === "function") {
+    for (let key of __getOwnPropNames(module))
+      if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
+        __defProp(target, key, { get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable });
+  }
+  return target;
+};
+var __toCommonJS = /* @__PURE__ */ ((cache) => {
+  return (module, temp) => {
+    return cache && cache.get(module) || (temp = __reExport(__markAsModule({}), module, 1), cache && cache.set(module, temp), temp);
+  };
+})(typeof WeakMap !== "undefined" ? /* @__PURE__ */ new WeakMap() : 0);
 
-/***/ "./build.js":
-/*!******************!*\
-  !*** ./build.js ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+// node_modules/firebase-firestore-lite/dist/GeoPoint.js
+var GeoPoint;
+var init_GeoPoint = __esm({
+  "node_modules/firebase-firestore-lite/dist/GeoPoint.js"() {
+    GeoPoint = class {
+      constructor(latitude, longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        if (typeof latitude !== "number")
+          throw Error("The latitude argument should be of type number");
+        if (typeof latitude !== "number")
+          throw Error("The longitude argument should be of type number");
+        if (latitude >= 90 || latitude <= -90)
+          throw Error("GeoPoint's latitude should be within the range of -90.0 and 90.0");
+        if (longitude >= 180 || longitude <= -180)
+          throw Error("GeoPoint's longitude should be within the range of -180.0 and 180.0");
+      }
+      toJSON() {
+        return {
+          geoPointValue: { ...this }
+        };
+      }
+    };
+  }
+});
 
-eval("var { Database } = __webpack_require__(/*! firebase-firestore-lite */ \"./node_modules/firebase-firestore-lite/dist/mod.js\")\r\nvar D = new Database({ projectId: 'jiijii' })\r\nvar ref\r\n\r\nvar List = async x => {\r\n    var results = await D.ref('!!').query({\r\n        // where: [\r\n        //     ['set', '==', X.set]\r\n        // ],\r\n        orderBy: { field: 'date', direction: 'desc' },\r\n        limit: 50 // The max results\r\n    }).run()\r\n    results = JSON.parse(JSON.stringify(results))\r\n    if (!x || !x.query || x.query != \"+\") results = results.filter(({ is }) => is>0)\r\n      //  results = results.filter(({ set }) => set==X.set)\r\n if (!x) return results\r\n    if (x === \"-\") return results\r\n    if (x.query && (x.query === \"-\" || x.query === '\\\\')) return results.map(({ geo, cap, id, th, is, pic, url }, o) => ({\r\n        type: 'photo',\r\n        id: id,\r\n        title: (1 + o) + \" \" + is,\r\n        caption: [pic, \"www.google.com/maps?q=\" + geo, cap].join(\"\\n\"),\r\n        thumb_url: url,\r\n        photo_url: url,\r\n        photo_height: 100\r\n    })).slice(0, 49)\r\n    return results.map(({ geo, cap, id, th, is, pic, url }, o) => ({\r\n        type: 'article',\r\n        id: id,\r\n        title: (1 + o) + \" \" + is,\r\n        description: [pic, \"www.google.com/maps?q=\" + geo, cap].join(\"\\n\"),\r\n        thumb_url: th,\r\n        input_message_content: {\r\n            message_text: [pic, \"www.google.com/maps?q=\" + geo, cap].join(\"\\n\")\r\n        },\r\n    })).slice(0, 49)\r\n}\r\nvar Get = async x => {\r\n    return await D.ref('!/' + x).get().catch(r => { return {} }) //.then( r => r || 2)\r\n}\r\nvar Del = async x => {\r\n    return await D.ref('!!/' + x).delete().catch(r => { return {} }) //.then( r => r || 2)\r\n}\r\nvar Put = async (x, z) => {\r\n    if (!z && x && x.id) return await D.ref('!!/' + x.id).set(x)\r\n    if (z) {\r\n        ref = await D.ref('!/' + z)\r\n        // ref = await D.ref('@/' + z)\r\n        try {\r\n            return await ref.update(x)\r\n        } catch (err) {\r\n            return await ref.set(x)\r\n        }\r\n    }\r\n}\r\nvar Add = async (x, z) => {\r\n\r\n    if (z) {\r\n        ref = await D.ref('!/' + z)\r\n        // ref = await D.ref('@/' + z)\r\n        try {\r\n            return await ref.update(x)\r\n        } catch (err) {\r\n            return await ref.set(x)\r\n        }\r\n    }\r\n}\r\nvar db = function() {\r\n    \r\n    var del = async x => await Del(x)\r\n    var get = async x => await Get(x)\r\n    var list = async x => await List(x)\r\n    var add = async (x, z) => await Add(x, z)\r\n    var put = async (x, z) => await Put(x, z)\r\n    return {\r\n      \r\n        del: del,\r\n        put: put,\r\n        add: add,\r\n        list: list,\r\n        get: get\r\n    }\r\n}()\r\nmodule.exports = db\n\n//# sourceURL=webpack:///./build.js?");
+// node_modules/firebase-firestore-lite/dist/Transform.js
+function isNumber(v) {
+  return typeof v === "number" && !isNaN(v - v);
+}
+var transformsMap, Transform;
+var init_Transform = __esm({
+  "node_modules/firebase-firestore-lite/dist/Transform.js"() {
+    init_utils();
+    transformsMap = {
+      serverTimestamp: ["setToServerValue"],
+      increment: ["increment", isNumber],
+      max: ["maximum", isNumber],
+      min: ["minimum", isNumber],
+      appendToArray: ["appendMissingElements", Array.isArray],
+      removeFromArray: ["removeAllFromArray", Array.isArray]
+    };
+    Transform = class {
+      constructor(name, value) {
+        if (!(name in transformsMap))
+          throw Error(`Invalid transform name: "${name}"`);
+        const [transformName, validator] = transformsMap[name];
+        if (validator && !validator(value))
+          throw Error(`The value for the transform "${name}" needs to be a${validator === isNumber ? " number" : "n array"}.`);
+        if (validator === Array.isArray)
+          this[transformName] = encodeValue(value).arrayValue;
+        else
+          this[transformName] = name === "serverTimestamp" ? "REQUEST_TIME" : encodeValue(value);
+      }
+    };
+  }
+});
 
-/***/ }),
+// node_modules/firebase-firestore-lite/dist/utils.js
+function trimPath(path) {
+  return path.trim().replace(/^\/?/, "").replace(/\/?$/, "");
+}
+function isPath(type, s) {
+  return typeof s === "string" && s !== "" && trimPath(s).split("/").length % 2 === (type === "doc" ? 0 : 1);
+}
+function isRef(type, val) {
+  return val instanceof Reference && (type === "doc" ? !val.isCollection : val.isCollection);
+}
+function isRefType(ref) {
+  return ref instanceof Reference || ref instanceof Document || typeof ref === "string";
+}
+function getPathFromRef(ref) {
+  var _a, _b, _c, _d;
+  if (!isRefType(ref))
+    throw TypeError("Expected a Reference, Document or a path but got something else");
+  return (_d = (_c = (_b = (_a = ref) === null || _a === void 0 ? void 0 : _a.__meta__) === null || _b === void 0 ? void 0 : _b.path) !== null && _c !== void 0 ? _c : ref.path) !== null && _d !== void 0 ? _d : trimPath(ref);
+}
+function restrictTo(type, ref) {
+  const isDoc = type === "doc";
+  const path = getPathFromRef(ref);
+  if (!isPath(type, path))
+    throw TypeError(`You are trying to access a method reserved for ${isDoc ? "Documents" : "Collections"} with a ${isDoc ? "Collection" : "Document"}`);
+  return path;
+}
+function isPositiveInteger(val) {
+  return Number.isInteger(val) && val >= 0;
+}
+function objectToQuery(obj = {}, parentProp) {
+  const params = [];
+  const encode2 = encodeURIComponent;
+  for (const prop in obj) {
+    if (obj[prop] === void 0)
+      continue;
+    const propPath = parentProp ? `${parentProp}.${prop}` : prop;
+    if (Array.isArray(obj[prop])) {
+      obj[prop].forEach((v) => {
+        params.push(`${propPath}=${encode2(v)}`);
+      });
+      continue;
+    }
+    if (typeof obj[prop] === "object") {
+      const val = objectToQuery(obj[prop], propPath);
+      val && params.push(val);
+      continue;
+    }
+    params.push(`${propPath}=${encode2(obj[prop])}`);
+  }
+  return (!parentProp && params.length ? "?" : "") + params.join("&");
+}
+function getKeyPaths(object, parentPath) {
+  let mask = [];
+  for (const key in object) {
+    if (object[key] instanceof Transform)
+      continue;
+    const keyPath = parentPath ? `${parentPath}.${key}` : key;
+    if (object[key] !== null && typeof object[key] === "object" && !Array.isArray(object[key]) && !(object[key] instanceof Date)) {
+      mask = mask.concat(getKeyPaths(object[key], keyPath));
+      continue;
+    }
+    mask.push(keyPath);
+  }
+  return mask;
+}
+function compileOptions(options, obj) {
+  const compiled = {};
+  for (let [key, value] of Object.entries(options)) {
+    if (value === void 0)
+      continue;
+    switch (key) {
+      case "exists":
+      case "updateTime":
+        if (!compiled.currentDocument)
+          compiled.currentDocument = {};
+        compiled.currentDocument[key] = value;
+        break;
+      case "updateMask":
+        if (!obj)
+          break;
+        if (value)
+          compiled.updateMask = { fieldPaths: getKeyPaths(obj) };
+        break;
+      case "mask":
+        compiled.mask = { fieldPaths: value };
+        break;
+      default:
+        compiled[key] = value;
+    }
+  }
+  return compiled;
+}
+function decodeValue(value, db) {
+  const type = Object.keys(value)[0];
+  value = value[type];
+  switch (type) {
+    case "integerValue":
+      return Number(value);
+    case "arrayValue":
+      return value.values ? value.values.map((val) => decodeValue(val, db)) : [];
+    case "mapValue":
+      return decode(value, db);
+    case "timestampValue":
+      return new Date(value);
+    case "referenceValue":
+      return new Reference(value.replace(db.rootPath, ""), db);
+    case "geoPointValue":
+      return new GeoPoint(value.latitude, value.longitude);
+    case "stringValue":
+    case "doubleValue":
+    case "booleanValue":
+    case "nullValue":
+    case "bytesValue":
+      return value;
+  }
+  throw Error(`Invalid Firestore value_type "${type}"`);
+}
+function decode(map, db) {
+  if (db === void 0)
+    throw Error('Argument "db" is required but missing');
+  const object = {};
+  for (const key in map.fields) {
+    object[key] = decodeValue(map.fields[key], db);
+  }
+  return object;
+}
+function encodeValue(value, transforms, parentPath) {
+  const objectClass = Object.prototype.toString.call(value);
+  let valueType = objectClass.substring(8, objectClass.length - 1).toLowerCase() + "Value";
+  switch (valueType) {
+    case "numberValue":
+      valueType = Number.isInteger(value) ? "integerValue" : "doubleValue";
+      value = valueType === "integerValue" ? String(value) : value;
+      break;
+    case "arrayValue":
+      value = value.length ? { values: value.map(encodeValue) } : {};
+      break;
+    case "dateValue":
+      valueType = "timestampValue";
+      value = value.toISOString();
+      break;
+    case "objectValue":
+      if (value instanceof Reference || value instanceof GeoPoint)
+        return value.toJSON();
+      valueType = "mapValue";
+      value = encode(value, transforms, parentPath);
+      break;
+  }
+  return { [valueType]: value };
+}
+function encode(object, transforms, parentPath) {
+  const keys = Object.keys(object);
+  if (keys.length === 0)
+    return {};
+  const map = { fields: {} };
+  for (const key of keys) {
+    if (object[key] === void 0)
+      continue;
+    const value = object[key];
+    const path = parentPath ? `${parentPath}.${key}` : key;
+    if (value instanceof Transform) {
+      value.fieldPath = path;
+      transforms && transforms.push(value);
+      continue;
+    }
+    map.fields[key] = encodeValue(value, transforms, path);
+  }
+  return map;
+}
+function fid() {
+  const randBytes = crypto.getRandomValues(new Uint8Array(20));
+  return Array.from(randBytes).map((b) => validChars[b % 63]).join("");
+}
+var validChars;
+var init_utils = __esm({
+  "node_modules/firebase-firestore-lite/dist/utils.js"() {
+    init_Reference();
+    init_GeoPoint();
+    init_Transform();
+    init_Document();
+    validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890";
+  }
+});
 
-/***/ "./node_modules/firebase-firestore-lite/dist/Database.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/Database.js ***!
-  \***************************************************************/
-/*! exports provided: Database */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+// node_modules/firebase-firestore-lite/dist/Document.js
+var Document;
+var init_Document = __esm({
+  "node_modules/firebase-firestore-lite/dist/Document.js"() {
+    init_utils();
+    Document = class {
+      constructor(rawDoc, db) {
+        if (db === void 0)
+          throw Error('Argument "db" is required but missing');
+        const { name, createTime, updateTime } = rawDoc;
+        const meta = {
+          db,
+          name,
+          createTime,
+          updateTime,
+          path: name.replace(db.rootPath, ""),
+          id: name.split("/").pop()
+        };
+        Object.defineProperty(this, "__meta__", { value: meta });
+        Object.assign(this, decode(rawDoc, db));
+      }
+    };
+  }
+});
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Database\", function() { return Database; });\n/* harmony import */ var _Reference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reference */ \"./node_modules/firebase-firestore-lite/dist/Reference.js\");\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ \"./node_modules/firebase-firestore-lite/dist/utils.js\");\n/* harmony import */ var _Transaction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Transaction */ \"./node_modules/firebase-firestore-lite/dist/Transaction.js\");\n/* harmony import */ var _Query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Query */ \"./node_modules/firebase-firestore-lite/dist/Query.js\");\n\n\n\n\n\n/** @private */\nasync function handleApiResponse(res) {\n    if (!res.ok) {\n        const data = await res.json();\n        if (Array.isArray(data))\n            throw data.length === 1\n                ? Object.assign(new Error(), data[0].error)\n                : data;\n        throw Object.assign(new Error(), data.error);\n    }\n    return res.json();\n}\n/** Database Instance */\nclass Database {\n    constructor({ projectId, auth, name = '(default)', host = 'firestore.googleapis.com', ssl = true }) {\n        if (projectId === undefined)\n            throw Error('Database constructor expected the \"config\" argument to have a valid \"projectId\" property');\n        this.name = name;\n        this.auth = auth;\n        this.rootPath = `projects/${projectId}/databases/${name}/documents`;\n        this.endpoint = `http${ssl ? 's' : ''}://${host}/v1/${this.rootPath}`;\n    }\n    /**\n     * For internal use only.\n     * Uses native fetch, but adds authorization headers\n     * if the Reference was instantiated with an auth instance.\n     * The API is exactly the same as native fetch.\n     * @private\n     */\n    fetch(input, init) {\n        if (this.auth && this.auth.authorizedRequest)\n            return this.auth.authorizedRequest(input, init).then(handleApiResponse);\n        return fetch(input, init).then(handleApiResponse);\n    }\n    /**\n     * Returns a reference to a document or a collection.\n     * @param {(string|Document)} path Path to the collection or document.\n     * @returns {Reference} instance of a reference.\n     */\n    ref(path) {\n        if (path instanceof _Document__WEBPACK_IMPORTED_MODULE_1__[\"Document\"])\n            path = path.__meta__.path;\n        return new _Reference__WEBPACK_IMPORTED_MODULE_0__[\"Reference\"](path, this);\n    }\n    async batchGet(refs) {\n        const response = await this.fetch(this.endpoint + ':batchGet', {\n            method: 'POST',\n            body: JSON.stringify({\n                documents: refs.map(ref => {\n                    const path = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"restrictTo\"])('doc', ref);\n                    return `${this.rootPath}/${path}`;\n                })\n            })\n        });\n        return response.map((entry) => entry.found\n            ? new _Document__WEBPACK_IMPORTED_MODULE_1__[\"Document\"](entry.found, this)\n            : Object.defineProperty({}, '__missing__', { value: entry.missing }));\n    }\n    /** Returns a new transaction instance */\n    transaction() {\n        return new _Transaction__WEBPACK_IMPORTED_MODULE_3__[\"Transaction\"](this);\n    }\n    /**\n     * Executes the given `updateFunction` and attempts to commit\n     * the changes applied within it as a Transaction. If any document\n     * read within the transaction has changed, Cloud Firestore retries\n     * the updateFunction. If it fails to commit after 5 attempts, the\n     * transaction fails and throws.\n     *\n     * Will not re-attempt if an error is thrown inside the `updateFunction`\n     * or if any error that is not related to the transaction is received\n     * like a network error etc.\n     */\n    async runTransaction(fn, attempts = 5) {\n        const tx = new _Transaction__WEBPACK_IMPORTED_MODULE_3__[\"Transaction\"](this);\n        while (attempts > 0) {\n            await fn(tx);\n            // Only retry on transaction errors.\n            try {\n                await tx.commit();\n                break; // Stop trying if it succeeded.\n            }\n            catch (e) {\n                // Only throw if the error is not related to the transaction, or it is the last attempt.\n                if (attempts === 0 ||\n                    (e.status !== 'NOT_FOUND' && e.status !== 'FAILED_PRECONDITION'))\n                    throw Error(e);\n            }\n            attempts--;\n        }\n    }\n    /**\n     * Query all all collections that match the given name that\n     * also are descendants of a given document (or root by default).\n     */\n    collectionGroup(collectionId, options = {}) {\n        return new _Query__WEBPACK_IMPORTED_MODULE_4__[\"Query\"](this.ref('parent' in options ? options.parent : ''), {\n            from: {\n                collectionId,\n                allDescendants: true\n            },\n            ...options\n        });\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/Database.js?");
+// node_modules/firebase-firestore-lite/dist/Query.js
+function validateFilter(filter) {
+  if (!Array.isArray(filter) || filter.length !== 3)
+    throw Error("Filter missing arguments");
+  const [fieldPath, op, value] = filter;
+  if (typeof fieldPath !== "string")
+    throw Error("Invalid field path");
+  if (!(op in operatorsMap))
+    throw Error("Invalid operator");
+  if ((value === null || Number.isNaN(value)) && filter[1] !== "==")
+    throw Error("Null and NaN can only be used with the == operator");
+  if (value === void 0)
+    throw Error("Invalid comparative value");
+}
+var operatorsMap, encoders, queryOptions, Query;
+var init_Query = __esm({
+  "node_modules/firebase-firestore-lite/dist/Query.js"() {
+    init_Document();
+    init_utils();
+    operatorsMap = {
+      "<": "LESS_THAN",
+      "<=": "LESS_THAN_OR_EQUAL",
+      ">": "GREATER_THAN",
+      ">=": "GREATER_THAN_OR_EQUAL",
+      "==": "EQUAL",
+      contains: "ARRAY_CONTAINS",
+      "contains-any": "ARRAY_CONTAINS_ANY",
+      in: "IN"
+    };
+    encoders = {
+      select(fieldsArray) {
+        const fields = fieldsArray.map((fieldPath) => ({ fieldPath }));
+        return fields.length ? { fields } : void 0;
+      },
+      encodeFilter([fieldPath, op, value]) {
+        if (Number.isNaN(value) || value === null) {
+          return {
+            unaryFilter: {
+              field: { fieldPath },
+              op: Number.isNaN(value) ? "IS_NAN" : "IS_NULL"
+            }
+          };
+        }
+        return {
+          fieldFilter: {
+            field: { fieldPath },
+            op: operatorsMap[op],
+            value: encodeValue(value)
+          }
+        };
+      },
+      where(option) {
+        if (option.length === 0)
+          return;
+        if (option.length === 1) {
+          return this.encodeFilter(option[0]);
+        }
+        return {
+          compositeFilter: {
+            op: "AND",
+            filters: option.map(this.encodeFilter)
+          }
+        };
+      },
+      orderBy(fields, options) {
+        var _a, _b, _c;
+        if ((options.startAt || options.endAt) && ((_a = fields[fields.length - 1]) === null || _a === void 0 ? void 0 : _a.field.fieldPath) !== "__name__")
+          fields.push({
+            field: { fieldPath: "__name__" },
+            direction: (_c = (_b = fields[fields.length - 1]) === null || _b === void 0 ? void 0 : _b.direction) !== null && _c !== void 0 ? _c : "ASCENDING"
+          });
+        return fields;
+      },
+      documentToCursor(doc, options) {
+        const values = [];
+        for (let order of options.orderBy) {
+          if (order.field.fieldPath === "__name__") {
+            values.push({ referenceValue: doc.__meta__.name });
+            continue;
+          }
+          const value = doc[order.field.fieldPath];
+          value && values.push(encodeValue(value));
+        }
+        return {
+          values,
+          before: true
+        };
+      },
+      startAt(doc, options) {
+        return this.documentToCursor(doc, options);
+      },
+      endAt(doc, options) {
+        return this.startAt(doc, options);
+      }
+    };
+    queryOptions = [
+      "select",
+      "from",
+      "where",
+      "orderBy",
+      "startAt",
+      "endAt",
+      "offset",
+      "limit"
+    ];
+    Query = class {
+      constructor(parent, init = {}) {
+        this.parent = parent;
+        this.options = {
+          select: [],
+          where: [],
+          orderBy: []
+        };
+        if (!isRef("doc", parent))
+          throw Error("Expected parent to be a reference to a document");
+        for (const option of queryOptions) {
+          const optionValue = init[option];
+          if (option in init) {
+            if (option === "where" && Array.isArray(optionValue[0]) || option === "orderBy" && Array.isArray(optionValue)) {
+              optionValue.forEach((val, i) => {
+                try {
+                  this[option](val);
+                } catch (e) {
+                  throw Error(`Invalid argument "${option}[${i}]": ${e.message}`);
+                }
+              });
+              continue;
+            }
+            try {
+              this[option](optionValue);
+            } catch (e) {
+              throw Error(`Invalid argument "${option}": ${e.message}`);
+            }
+          }
+        }
+      }
+      select(fields) {
+        if (!Array.isArray(fields))
+          throw Error("Expected argument to be an array of field paths");
+        fields.forEach((field, i) => {
+          if (typeof field !== "string")
+            throw Error(`Field path at index [${i}] is not a string`);
+          this.options.select.push(field);
+        });
+      }
+      from(from) {
+        let { collectionId = from, allDescendants } = from;
+        if (typeof collectionId !== "string")
+          throw Error('Expected "collectionId" to be a string');
+        if (allDescendants !== void 0 && typeof allDescendants !== "boolean")
+          throw Error('Expected the "allDescendants" to be a boolean');
+        this.options.from = {
+          collectionId,
+          allDescendants
+        };
+        return this;
+      }
+      where(fieldPath) {
+        const filter = Array.isArray(fieldPath) ? fieldPath : arguments;
+        validateFilter(filter);
+        this.options.where.push(filter);
+        return this;
+      }
+      orderBy(order, dir = "asc") {
+        const dirMap = {
+          asc: "ASCENDING",
+          desc: "DESCENDING"
+        };
+        let { field: fieldPath = order, direction = dir } = order;
+        direction = dirMap[direction];
+        if (typeof fieldPath !== "string")
+          throw Error('"field" property needs to be a string');
+        if (direction === void 0)
+          throw Error('"direction" property can only be "asc" or "desc"');
+        this.options.orderBy.push({ field: { fieldPath }, direction });
+        return this;
+      }
+      startAt(doc) {
+        if (!(doc instanceof Document))
+          throw Error("Expected a Document instance");
+        this.options.startAt = doc;
+        return this;
+      }
+      endAt(doc) {
+        if (!(doc instanceof Document))
+          throw Error("Expected a Document instance");
+        this.options.endAt = doc;
+        return this;
+      }
+      offset(number) {
+        if (!isPositiveInteger(number))
+          throw Error("Expected an integer that is greater than 0");
+        this.options.offset = number;
+        return this;
+      }
+      limit(number) {
+        if (!isPositiveInteger(number))
+          throw Error("Expected an integer that is greater than 0");
+        this.options.limit = number;
+        return this;
+      }
+      async run() {
+        var _a;
+        let results = await this.parent.db.fetch(this.parent.endpoint + ":runQuery", {
+          method: "POST",
+          body: JSON.stringify(this)
+        });
+        ((_a = results[0]) === null || _a === void 0 ? void 0 : _a.document) || results.splice(0, 1);
+        return results.map((result) => new Document(result.document, this.parent.db));
+      }
+      toJSON() {
+        const encoded = {};
+        for (const option in this.options) {
+          const optionValue = this.options[option];
+          if (option in encoders) {
+            encoded[option] = encoders[option](optionValue, this.options);
+            continue;
+          }
+          encoded[option] = optionValue;
+        }
+        return {
+          structuredQuery: encoded
+        };
+      }
+    };
+  }
+});
 
-/***/ }),
+// node_modules/firebase-firestore-lite/dist/List.js
+var List;
+var init_List = __esm({
+  "node_modules/firebase-firestore-lite/dist/List.js"() {
+    init_Document();
+    List = class {
+      constructor(rawList, ref, options = {}) {
+        if (ref === void 0)
+          throw Error('The "reference" argument is required when creating a List');
+        if (!ref.isCollection)
+          throw Error("The reference in a list should point to a collection");
+        const { documents, nextPageToken } = rawList;
+        this.ref = ref;
+        this.options = options;
+        this.documents = documents ? documents.map((rawDoc) => new Document(rawDoc, ref.db)) : [];
+        this.options.pageToken = nextPageToken;
+      }
+      getNextPage() {
+        return this.ref.list(this.options);
+      }
+      [Symbol.iterator]() {
+        let index = 0;
+        return {
+          next: () => {
+            if (index < this.documents.length) {
+              return { value: this.documents[index++], done: false };
+            } else {
+              return { done: true };
+            }
+          }
+        };
+      }
+    };
+  }
+});
 
-/***/ "./node_modules/firebase-firestore-lite/dist/Document.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/Document.js ***!
-  \***************************************************************/
-/*! exports provided: Document */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+// node_modules/firebase-firestore-lite/dist/Reference.js
+var Reference;
+var init_Reference = __esm({
+  "node_modules/firebase-firestore-lite/dist/Reference.js"() {
+    init_Query();
+    init_Document();
+    init_List();
+    init_utils();
+    Reference = class {
+      constructor(path, db) {
+        var _a;
+        this.db = db;
+        if (typeof path !== "string")
+          throw Error('The "path" argument should be a string');
+        path = trimPath(path);
+        this.id = (_a = path.split("/").pop()) !== null && _a !== void 0 ? _a : "";
+        this.path = path;
+        this.name = `${db.rootPath}/${path}`;
+        this.endpoint = `${db.endpoint}/${path}`;
+        this.isRoot = path === "";
+      }
+      get parent() {
+        if (this.isRoot)
+          throw Error("Can't get the parent of root");
+        return new Reference(this.path.replace(/\/?([^/]+)\/?$/, ""), this.db);
+      }
+      get parentCollection() {
+        if (this.isRoot)
+          throw Error("Can't get parent of a root collection");
+        if (this.isCollection)
+          return new Reference(this.path.replace(/(\/([^/]+)\/?){2}$|^([^/]+)$/, ""), this.db);
+        return this.parent;
+      }
+      get isCollection() {
+        return isPath("col", this.path);
+      }
+      child(path) {
+        path = path.replace(/^\/?/, "");
+        return new Reference(`${this.path}/${path}`, this.db);
+      }
+      async transact(method, obj, options = {}) {
+        const tx = this.db.transaction();
+        const res = tx[method](this, obj, options);
+        return await tx.commit().then(() => res);
+      }
+      async list(options = {}) {
+        restrictTo("col", this);
+        return new List(await this.db.fetch(this.endpoint + objectToQuery(compileOptions(options))), this, options);
+      }
+      async get(options = {}) {
+        restrictTo("doc", this);
+        return new Document(await this.db.fetch(this.endpoint + objectToQuery(compileOptions(options))), this.db);
+      }
+      async add(obj, options = {}) {
+        restrictTo("col", this);
+        return this.transact("add", obj, options);
+      }
+      async set(obj, options = {}) {
+        restrictTo("doc", this);
+        return this.transact("set", obj, options);
+      }
+      async update(obj, options = {}) {
+        restrictTo("doc", this);
+        return this.transact("update", obj, options);
+      }
+      async delete(options = {}) {
+        restrictTo("doc", this);
+        return this.transact("delete", options);
+      }
+      query(options = {}) {
+        restrictTo("col", this);
+        return new Query(this.parent, {
+          from: {
+            collectionId: this.id
+          },
+          ...options
+        });
+      }
+      toJSON() {
+        return {
+          referenceValue: this.name
+        };
+      }
+    };
+  }
+});
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Document\", function() { return Document; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./node_modules/firebase-firestore-lite/dist/utils.js\");\n\n/**\n * Wrapper around a fetched objects that represent a Firestore document.\n * It is supposed to be used as a regular JS object but has a hidden\n * property that holds the meta data of the document.\n *\n * That property is called `__meta__`, it should not be modified, and is non-enumerable.\n * It is used internally to identify the document when writing the\n * data to the database.\n */\nclass Document {\n    constructor(rawDoc, db) {\n        if (db === undefined)\n            throw Error('Argument \"db\" is required but missing');\n        const { name, createTime, updateTime } = rawDoc;\n        const meta = {\n            db,\n            name,\n            createTime,\n            updateTime,\n            path: name.replace(db.rootPath, ''),\n            id: name.split('/').pop()\n        };\n        Object.defineProperty(this, '__meta__', { value: meta });\n        Object.assign(this, Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"decode\"])(rawDoc, db));\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/Document.js?");
+// node_modules/firebase-firestore-lite/dist/Transaction.js
+var Transaction;
+var init_Transaction = __esm({
+  "node_modules/firebase-firestore-lite/dist/Transaction.js"() {
+    init_utils();
+    init_Document();
+    Transaction = class {
+      constructor(db) {
+        this.db = db;
+        this.writes = [];
+        this.preconditions = {};
+      }
+      write(ref, data, options = {}) {
+        if (typeof data !== "object")
+          throw Error("The data argument is missing");
+        const transforms = [];
+        const name = `${this.db.rootPath}/${getPathFromRef(ref)}`;
+        const precondition = this.preconditions[name];
+        const doc = encode(ref instanceof Document ? ref : data, transforms);
+        options = compileOptions(options, data);
+        precondition && (options.currentDocument = precondition);
+        doc.name = name;
+        this.writes.push({
+          update: doc,
+          ...options
+        });
+        transforms.length && this.writes.push({
+          transform: {
+            document: doc.name,
+            fieldTransforms: transforms
+          }
+        });
+      }
+      async get(refs) {
+        const docs = await this.db.batchGet(refs);
+        docs.forEach((doc) => {
+          const { name, updateTime } = doc.__meta__ || { name: doc.__missing__ };
+          this.preconditions[name] = updateTime ? { updateTime } : { exists: false };
+        });
+        return docs;
+      }
+      add(ref, data, options = {}) {
+        const path = `${restrictTo("col", ref)}/${fid()}`;
+        this.write(path, data, { exists: false, ...options });
+        return this.db.ref(path);
+      }
+      set(ref, data, options = {}) {
+        restrictTo("doc", ref);
+        this.write(ref, data, options);
+      }
+      update(ref, data, options = {}) {
+        restrictTo("doc", ref);
+        this.write(ref, data, { exists: true, updateMask: true, ...options });
+      }
+      delete(ref, options = {}) {
+        const name = `${this.db.rootPath}/${restrictTo("doc", ref)}`;
+        options = compileOptions(options);
+        this.preconditions[name] && (options.currentDocument = this.preconditions[name]);
+        this.writes.push({
+          delete: name,
+          ...options
+        });
+      }
+      async commit() {
+        this.preconditions = {};
+        return void await this.db.fetch(this.db.endpoint + ":commit", {
+          method: "POST",
+          body: JSON.stringify({ writes: this.writes })
+        });
+      }
+    };
+  }
+});
 
-/***/ }),
+// node_modules/firebase-firestore-lite/dist/Database.js
+async function handleApiResponse(res) {
+  if (!res.ok) {
+    const data = await res.json();
+    if (Array.isArray(data))
+      throw data.length === 1 ? Object.assign(new Error(), data[0].error) : data;
+    throw Object.assign(new Error(), data.error);
+  }
+  return res.json();
+}
+var Database;
+var init_Database = __esm({
+  "node_modules/firebase-firestore-lite/dist/Database.js"() {
+    init_Reference();
+    init_Document();
+    init_utils();
+    init_Transaction();
+    init_Query();
+    Database = class {
+      constructor({ projectId, auth, name = "(default)", host = "firestore.googleapis.com", ssl = true }) {
+        if (projectId === void 0)
+          throw Error('Database constructor expected the "config" argument to have a valid "projectId" property');
+        this.name = name;
+        this.auth = auth;
+        this.rootPath = `projects/${projectId}/databases/${name}/documents`;
+        this.endpoint = `http${ssl ? "s" : ""}://${host}/v1/${this.rootPath}`;
+      }
+      fetch(input, init) {
+        if (this.auth && this.auth.authorizedRequest)
+          return this.auth.authorizedRequest(input, init).then(handleApiResponse);
+        return fetch(input, init).then(handleApiResponse);
+      }
+      ref(path) {
+        if (path instanceof Document)
+          path = path.__meta__.path;
+        return new Reference(path, this);
+      }
+      async batchGet(refs) {
+        const response = await this.fetch(this.endpoint + ":batchGet", {
+          method: "POST",
+          body: JSON.stringify({
+            documents: refs.map((ref) => {
+              const path = restrictTo("doc", ref);
+              return `${this.rootPath}/${path}`;
+            })
+          })
+        });
+        return response.map((entry) => entry.found ? new Document(entry.found, this) : Object.defineProperty({}, "__missing__", { value: entry.missing }));
+      }
+      transaction() {
+        return new Transaction(this);
+      }
+      async runTransaction(fn, attempts = 5) {
+        const tx = new Transaction(this);
+        while (attempts > 0) {
+          await fn(tx);
+          try {
+            await tx.commit();
+            break;
+          } catch (e) {
+            if (attempts === 0 || e.status !== "NOT_FOUND" && e.status !== "FAILED_PRECONDITION")
+              throw Error(e);
+          }
+          attempts--;
+        }
+      }
+      collectionGroup(collectionId, options = {}) {
+        return new Query(this.ref("parent" in options ? options.parent : ""), {
+          from: {
+            collectionId,
+            allDescendants: true
+          },
+          ...options
+        });
+      }
+    };
+  }
+});
 
-/***/ "./node_modules/firebase-firestore-lite/dist/GeoPoint.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/GeoPoint.js ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+// node_modules/firebase-firestore-lite/dist/mod.js
+var mod_exports = {};
+__export(mod_exports, {
+  Database: () => Database,
+  Document: () => Document,
+  GeoPoint: () => GeoPoint,
+  Query: () => Query,
+  Reference: () => Reference,
+  Transaction: () => Transaction
+});
+var init_mod = __esm({
+  "node_modules/firebase-firestore-lite/dist/mod.js"() {
+    init_Database();
+    init_Reference();
+    init_Document();
+    init_Transaction();
+    init_Query();
+    init_GeoPoint();
+  }
+});
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return GeoPoint; });\n/** Represents a firebase GeoPoint value */\nclass GeoPoint {\n    constructor(latitude, longitude) {\n        this.latitude = latitude;\n        this.longitude = longitude;\n        if (typeof latitude !== 'number')\n            throw Error('The latitude argument should be of type number');\n        if (typeof latitude !== 'number')\n            throw Error('The longitude argument should be of type number');\n        if (latitude >= 90 || latitude <= -90)\n            throw Error(\"GeoPoint's latitude should be within the range of -90.0 and 90.0\");\n        if (longitude >= 180 || longitude <= -180)\n            throw Error(\"GeoPoint's longitude should be within the range of -180.0 and 180.0\");\n    }\n    toJSON() {\n        return {\n            geoPointValue: { ...this }\n        };\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/GeoPoint.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/List.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/List.js ***!
-  \***********************************************************/
-/*! exports provided: List */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"List\", function() { return List; });\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n\n/**\n * Represents a collection list response, with functionality\n * for getting the next page when available.\n * @param {Object} rawList The response \"raw\" list object.\n * @param {Reference} ref A reference to the collection.\n * @param {Object} options Any options that were passed at first to the get request.\n */\nclass List {\n    constructor(rawList, ref, options = {}) {\n        if (ref === undefined)\n            throw Error('The \"reference\" argument is required when creating a List');\n        if (!ref.isCollection)\n            throw Error('The reference in a list should point to a collection');\n        const { documents, nextPageToken } = rawList;\n        this.ref = ref;\n        this.options = options;\n        this.documents = documents\n            ? documents.map(rawDoc => new _Document__WEBPACK_IMPORTED_MODULE_0__[\"Document\"](rawDoc, ref.db))\n            : [];\n        this.options.pageToken = nextPageToken;\n    }\n    /** Fetches the next page in the query */\n    getNextPage() {\n        return this.ref.list(this.options);\n    }\n    [Symbol.iterator]() {\n        // Use a new index for each iterator. This makes multiple\n        // iterations over the iterable safe for non-trivial cases,\n        // such as use of break or nested looping over the same iterable.\n        let index = 0;\n        return {\n            next: () => {\n                if (index < this.documents.length) {\n                    return { value: this.documents[index++], done: false };\n                }\n                else {\n                    return { done: true };\n                }\n            }\n        };\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/List.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/Query.js":
-/*!************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/Query.js ***!
-  \************************************************************/
-/*! exports provided: Query */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Query\", function() { return Query; });\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./node_modules/firebase-firestore-lite/dist/utils.js\");\n\n\n/** @private */\nconst operatorsMap = {\n    '<': 'LESS_THAN',\n    '<=': 'LESS_THAN_OR_EQUAL',\n    '>': 'GREATER_THAN',\n    '>=': 'GREATER_THAN_OR_EQUAL',\n    '==': 'EQUAL',\n    contains: 'ARRAY_CONTAINS',\n    'contains-any': 'ARRAY_CONTAINS_ANY',\n    in: 'IN'\n};\n/**\n * Checks if a value is a valid filter array.\n * @private\n */\nfunction validateFilter(filter) {\n    if (!Array.isArray(filter) || filter.length !== 3)\n        throw Error('Filter missing arguments');\n    const [fieldPath, op, value] = filter;\n    if (typeof fieldPath !== 'string')\n        throw Error('Invalid field path');\n    if (!(op in operatorsMap))\n        throw Error('Invalid operator');\n    if ((value === null || Number.isNaN(value)) && filter[1] !== '==')\n        throw Error('Null and NaN can only be used with the == operator');\n    if (value === undefined)\n        throw Error('Invalid comparative value');\n}\n/**\n * A map of functions used to encode each argument for a query.\n * Each function receives the Library arguments and returns an object\n * that will be converted to Json and sent to the Firestore REST API.\n * @private\n */\nconst encoders = {\n    /**\n     * Converts an option from the Query instance into a valid JSON\n     * object to use with the Firestores REST API.\n     */\n    select(fieldsArray) {\n        const fields = fieldsArray.map(fieldPath => ({ fieldPath }));\n        return fields.length ? { fields } : undefined;\n    },\n    /** Converts a Query filter(array with three items), into an encoded filter */\n    encodeFilter([fieldPath, op, value]) {\n        if (Number.isNaN(value) || value === null) {\n            return {\n                unaryFilter: {\n                    field: { fieldPath },\n                    op: Number.isNaN(value) ? 'IS_NAN' : 'IS_NULL'\n                }\n            };\n        }\n        return {\n            fieldFilter: {\n                field: { fieldPath },\n                op: operatorsMap[op],\n                value: Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"encodeValue\"])(value)\n            }\n        };\n    },\n    /**\n     * Converts an option from the Query instance into a valid JSON\n     * object to use with the Firestore's REST API.\n     */\n    where(option) {\n        if (option.length === 0)\n            return;\n        if (option.length === 1) {\n            return this.encodeFilter(option[0]);\n        }\n        // If there are more than one filters then this is a composite filter.\n        return {\n            compositeFilter: {\n                op: 'AND',\n                filters: option.map(this.encodeFilter)\n            }\n        };\n    },\n    /**\n     * When a startAt or endAt cursor is used,\n     * It is necessary to add a __name__ order at the end\n     * in order to make sure we start from the right spot.\n     */\n    orderBy(fields, options) {\n        var _a, _b, _c;\n        // Only add the __name__ order if a cursor was provided\n        // and if its is not already present.\n        if ((options.startAt || options.endAt) &&\n            ((_a = fields[fields.length - 1]) === null || _a === void 0 ? void 0 : _a.field.fieldPath) !== '__name__')\n            fields.push({\n                field: { fieldPath: '__name__' },\n                // Use the default order when there are no other fields,\n                // And if there are fields, use the order of the last one.\n                // This adheres to the spec at:\n                // https://firebase.google.com/docs/firestore/reference/rest/v1beta1/StructuredQuery\n                direction: (_c = (_b = fields[fields.length - 1]) === null || _b === void 0 ? void 0 : _b.direction) !== null && _c !== void 0 ? _c : 'ASCENDING'\n            });\n        return fields;\n    },\n    documentToCursor(doc, options) {\n        const values = [];\n        for (let order of options.orderBy) {\n            if (order.field.fieldPath === '__name__') {\n                values.push({ referenceValue: doc.__meta__.name });\n                continue;\n            }\n            const value = doc[order.field.fieldPath];\n            value && values.push(Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"encodeValue\"])(value));\n        }\n        return {\n            values,\n            before: true\n        };\n    },\n    startAt(doc, options) {\n        return this.documentToCursor(doc, options);\n    },\n    endAt(doc, options) {\n        return this.startAt(doc, options);\n    }\n};\n/** @private */\nconst queryOptions = [\n    'select',\n    'from',\n    'where',\n    'orderBy',\n    'startAt',\n    'endAt',\n    'offset',\n    'limit'\n];\n/**\n * Query class that represents a Firestore query.\n */\nclass Query {\n    constructor(parent, init = {}) {\n        this.parent = parent;\n        this.options = {\n            select: [],\n            where: [],\n            orderBy: []\n        };\n        if (!Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"isRef\"])('doc', parent))\n            throw Error('Expected parent to be a reference to a document');\n        // Loop through all the valid options, validate them and then save them.\n        for (const option of queryOptions) {\n            const optionValue = init[option];\n            if (option in init) {\n                // If the option is \"where\" or \"orderBy\", and is also an array,\n                // then it might be a compound value, so we want to pass it one\n                // by one to its method.\n                //\n                // \"where\" is always an array, because every individual filter\n                // is represented by an array, so check to see if its first child\n                // is also an array. if it is, then it might be a compound value.\n                if ((option === 'where' && Array.isArray(optionValue[0])) ||\n                    (option === 'orderBy' && Array.isArray(optionValue))) {\n                    optionValue.forEach((val, i) => {\n                        // Use try/catch in order to provide context for the error.\n                        try {\n                            // Try to save the value.\n                            this[option](val);\n                        }\n                        catch (e) {\n                            throw Error(`Invalid argument \"${option}[${i}]\": ${e.message}`);\n                        }\n                    });\n                    continue;\n                }\n                // If the argument is not an array, then just save it directly.\n                // Again, we use try/catch to catch the error and add context to it.\n                try {\n                    this[option](optionValue);\n                }\n                catch (e) {\n                    throw Error(`Invalid argument \"${option}\": ${e.message}`);\n                }\n            }\n        }\n    }\n    select(fields) {\n        if (!Array.isArray(fields))\n            throw Error('Expected argument to be an array of field paths');\n        fields.forEach((field, i) => {\n            if (typeof field !== 'string')\n                throw Error(`Field path at index [${i}] is not a string`);\n            this.options.select.push(field);\n        });\n    }\n    /**\n     * Adds a collection to query.\n     */\n    from(from) {\n        let { collectionId = from, allDescendants } = from;\n        if (typeof collectionId !== 'string')\n            throw Error('Expected \"collectionId\" to be a string');\n        if (allDescendants !== undefined && typeof allDescendants !== 'boolean')\n            throw Error('Expected the \"allDescendants\" to be a boolean');\n        this.options.from = {\n            collectionId,\n            allDescendants\n        };\n        return this;\n    }\n    where(fieldPath) {\n        const filter = Array.isArray(fieldPath) ? fieldPath : arguments;\n        validateFilter(filter);\n        this.options.where.push(filter);\n        return this;\n    }\n    orderBy(order, dir = 'asc') {\n        const dirMap = {\n            asc: 'ASCENDING',\n            desc: 'DESCENDING'\n        };\n        let { field: fieldPath = order, direction = dir } = order;\n        direction = dirMap[direction];\n        if (typeof fieldPath !== 'string')\n            throw Error('\"field\" property needs to be a string');\n        if (direction === undefined)\n            throw Error('\"direction\" property can only be \"asc\" or \"desc\"');\n        this.options.orderBy.push({ field: { fieldPath }, direction });\n        return this;\n    }\n    startAt(doc) {\n        if (!(doc instanceof _Document__WEBPACK_IMPORTED_MODULE_0__[\"Document\"]))\n            throw Error('Expected a Document instance');\n        this.options.startAt = doc;\n        return this;\n    }\n    endAt(doc) {\n        if (!(doc instanceof _Document__WEBPACK_IMPORTED_MODULE_0__[\"Document\"]))\n            throw Error('Expected a Document instance');\n        this.options.endAt = doc;\n        return this;\n    }\n    offset(number) {\n        if (!Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"isPositiveInteger\"])(number))\n            throw Error('Expected an integer that is greater than 0');\n        this.options.offset = number;\n        return this;\n    }\n    limit(number) {\n        if (!Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"isPositiveInteger\"])(number))\n            throw Error('Expected an integer that is greater than 0');\n        this.options.limit = number;\n        return this;\n    }\n    async run() {\n        var _a;\n        let results = await this.parent.db.fetch(this.parent.endpoint + ':runQuery', {\n            method: 'POST',\n            body: JSON.stringify(this)\n        });\n        ((_a = results[0]) === null || _a === void 0 ? void 0 : _a.document) || results.splice(0, 1);\n        return results.map((result) => new _Document__WEBPACK_IMPORTED_MODULE_0__[\"Document\"](result.document, this.parent.db));\n    }\n    toJSON() {\n        const encoded = {};\n        for (const option in this.options) {\n            const optionValue = this.options[option];\n            if (option in encoders) {\n                encoded[option] = encoders[option](optionValue, this.options);\n                continue;\n            }\n            encoded[option] = optionValue;\n        }\n        return {\n            structuredQuery: encoded\n        };\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/Query.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/Reference.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/Reference.js ***!
-  \****************************************************************/
-/*! exports provided: Reference */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Reference\", function() { return Reference; });\n/* harmony import */ var _Query__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Query */ \"./node_modules/firebase-firestore-lite/dist/Query.js\");\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./List */ \"./node_modules/firebase-firestore-lite/dist/List.js\");\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ \"./node_modules/firebase-firestore-lite/dist/utils.js\");\n\n\n\n\nclass Reference {\n    constructor(path, db) {\n        var _a;\n        this.db = db;\n        if (typeof path !== 'string')\n            throw Error('The \"path\" argument should be a string');\n        // Normalize the path by removing slashes from\n        // the beginning or the end and trimming spaces.\n        path = Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"trimPath\"])(path);\n        this.id = (_a = path.split('/').pop()) !== null && _a !== void 0 ? _a : '';\n        this.path = path;\n        this.name = `${db.rootPath}/${path}`;\n        this.endpoint = `${db.endpoint}/${path}`;\n        this.isRoot = path === '';\n    }\n    /** Returns a reference to the parent document/collection */\n    get parent() {\n        if (this.isRoot)\n            throw Error(\"Can't get the parent of root\");\n        return new Reference(this.path.replace(/\\/?([^/]+)\\/?$/, ''), this.db);\n    }\n    /** Returns a reference to the parent collection */\n    get parentCollection() {\n        if (this.isRoot)\n            throw Error(\"Can't get parent of a root collection\");\n        if (this.isCollection)\n            return new Reference(this.path.replace(/(\\/([^/]+)\\/?){2}$|^([^/]+)$/, ''), this.db);\n        return this.parent;\n    }\n    /** Returns true if this reference is a collection */\n    get isCollection() {\n        return Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"isPath\"])('col', this.path);\n    }\n    /** Returns a reference to the specified child path */\n    child(path) {\n        // Remove starting forward slash\n        path = path.replace(/^\\/?/, '');\n        // Return a newly created document with the new sub path.\n        return new Reference(`${this.path}/${path}`, this.db);\n    }\n    async transact(method, obj, options = {}) {\n        const tx = this.db.transaction();\n        const res = tx[method](this, obj, options);\n        return await tx.commit().then(() => res);\n    }\n    /** Returns all documents in the collection */\n    async list(options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('col', this);\n        return new _List__WEBPACK_IMPORTED_MODULE_2__[\"List\"](await this.db.fetch(this.endpoint + Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"objectToQuery\"])(Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"compileOptions\"])(options))), this, options);\n    }\n    /** Returns the document of this reference. */\n    async get(options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('doc', this);\n        return new _Document__WEBPACK_IMPORTED_MODULE_1__[\"Document\"](await this.db.fetch(this.endpoint + Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"objectToQuery\"])(Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"compileOptions\"])(options))), this.db);\n    }\n    /** Create a new document with a randomly generated id */\n    async add(obj, options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('col', this);\n        return this.transact('add', obj, options);\n    }\n    /** Create a new document or overwrites an existing one matching this reference. */\n    async set(obj, options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('doc', this);\n        return this.transact('set', obj, options);\n    }\n    /** Updates a document while ignoring all missing fields in the provided object. */\n    async update(obj, options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('doc', this);\n        return this.transact('update', obj, options);\n    }\n    /** Deletes the referenced document from the database. */\n    async delete(options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('doc', this);\n        return this.transact('delete', options);\n    }\n    /** Queries the child documents/collections of this reference. */\n    query(options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_3__[\"restrictTo\"])('col', this);\n        return new _Query__WEBPACK_IMPORTED_MODULE_0__[\"Query\"](this.parent, {\n            from: {\n                collectionId: this.id\n            },\n            ...options\n        });\n    }\n    toJSON() {\n        return {\n            referenceValue: this.name\n        };\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/Reference.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/Transaction.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/Transaction.js ***!
-  \******************************************************************/
-/*! exports provided: Transaction */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Transaction\", function() { return Transaction; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./node_modules/firebase-firestore-lite/dist/utils.js\");\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n\n\nclass Transaction {\n    constructor(db) {\n        this.db = db;\n        this.writes = [];\n        this.preconditions = {};\n    }\n    /**\n     * Creates a write instruction and adds it into the\n     * transaction writes array.\n     * @private\n     */\n    write(ref, data, options = {}) {\n        if (typeof data !== 'object')\n            throw Error('The data argument is missing');\n        const transforms = [];\n        const name = `${this.db.rootPath}/${Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"getPathFromRef\"])(ref)}`;\n        const precondition = this.preconditions[name];\n        // Compile the JS Object into a Firebase Document.\n        const doc = Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"encode\"])(ref instanceof _Document__WEBPACK_IMPORTED_MODULE_1__[\"Document\"] ? ref : data, transforms);\n        // Compile the options object into Firebase API arguments.\n        options = Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"compileOptions\"])(options, data);\n        // Check if there is any precondition created by getting a document\n        // as part of this transaction, and if there is then use it.\n        precondition && (options.currentDocument = precondition);\n        // Set the document's name\n        doc.name = name;\n        // Add the static properties.\n        this.writes.push({\n            update: doc,\n            ...options\n        });\n        // Add the Transforms if available.\n        transforms.length &&\n            this.writes.push({\n                transform: {\n                    document: doc.name,\n                    fieldTransforms: transforms\n                }\n            });\n    }\n    /**\n     * Wraps batch get with additional functionality needed in transactions.\n     * Transactions need to be atomic. So in order to know that the document\n     * wasn't changed concurrently then we save the updateTime of each document.\n     *\n     * Later we tell the database to use that as a precondition for the write.\n     * In other words, if the update time of a document changed, then abort\n     * the transaction. However, if a document didn't exist, then we use that\n     * as a precondition, telling the database that if it was created concurrently\n     * then it should abort the operation.\n     */\n    async get(refs) {\n        const docs = await this.db.batchGet(refs);\n        docs.forEach((doc) => {\n            const { name, updateTime } = doc.__meta__ || { name: doc.__missing__ };\n            this.preconditions[name] = updateTime\n                ? { updateTime }\n                : { exists: false };\n        });\n        return docs;\n    }\n    add(ref, data, options = {}) {\n        const path = `${Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"restrictTo\"])('col', ref)}/${Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"fid\"])()}`;\n        this.write(path, data, { exists: false, ...options });\n        return this.db.ref(path);\n    }\n    set(ref, data, options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"restrictTo\"])('doc', ref);\n        this.write(ref, data, options);\n    }\n    update(ref, data, options = {}) {\n        Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"restrictTo\"])('doc', ref);\n        this.write(ref, data, { exists: true, updateMask: true, ...options });\n    }\n    /**\n     * Adds a delete operation to the transaction.\n     */\n    delete(ref, options = {}) {\n        const name = `${this.db.rootPath}/${Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"restrictTo\"])('doc', ref)}`;\n        options = Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"compileOptions\"])(options);\n        // Check if there is any precondition created by getting a document\n        // as part of this transaction, and if there is then use it.\n        this.preconditions[name] &&\n            (options.currentDocument = this.preconditions[name]);\n        this.writes.push({\n            delete: name,\n            ...options\n        });\n    }\n    /**\n     * Commits the transaction.\n     * Will throw if the transaction failed.\n     */\n    async commit() {\n        this.preconditions = {};\n        return void (await this.db.fetch(this.db.endpoint + ':commit', {\n            method: 'POST',\n            body: JSON.stringify({ writes: this.writes })\n        }));\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/Transaction.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/Transform.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/Transform.js ***!
-  \****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Transform; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./node_modules/firebase-firestore-lite/dist/utils.js\");\n\n/** @private */\nfunction isNumber(v) {\n    return typeof v === 'number' && !isNaN(v - v);\n}\n/** @private */\nconst transformsMap = {\n    serverTimestamp: ['setToServerValue'],\n    increment: ['increment', isNumber],\n    max: ['maximum', isNumber],\n    min: ['minimum', isNumber],\n    appendToArray: ['appendMissingElements', Array.isArray],\n    removeFromArray: ['removeAllFromArray', Array.isArray]\n};\n/**\n * Represents a value that is the result of an operation\n * made by the Firebase server. For example `serverTimestamp`\n * can't be known in the client, as it evaluates in the server.\n */\nclass Transform {\n    /**\n     * @param value when applicable, the value will be used.\n     * for example when using `increment` the value will be the number to increment by.\n     */\n    constructor(name, value) {\n        if (!(name in transformsMap))\n            throw Error(`Invalid transform name: \"${name}\"`);\n        const [transformName, validator] = transformsMap[name];\n        if (validator && !validator(value))\n            throw Error(`The value for the transform \"${name}\" needs to be a${validator === isNumber ? ' number' : 'n array'}.`);\n        if (validator === Array.isArray)\n            this[transformName] = Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"encodeValue\"])(value).arrayValue;\n        else\n            this[transformName] =\n                name === 'serverTimestamp' ? 'REQUEST_TIME' : Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"encodeValue\"])(value);\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/Transform.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/mod.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/mod.js ***!
-  \**********************************************************/
-/*! exports provided: Database, GeoPoint, Transaction, Reference, Document, Query */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Database__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Database */ \"./node_modules/firebase-firestore-lite/dist/Database.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Database\", function() { return _Database__WEBPACK_IMPORTED_MODULE_0__[\"Database\"]; });\n\n/* harmony import */ var _Reference__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Reference */ \"./node_modules/firebase-firestore-lite/dist/Reference.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Reference\", function() { return _Reference__WEBPACK_IMPORTED_MODULE_1__[\"Reference\"]; });\n\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Document\", function() { return _Document__WEBPACK_IMPORTED_MODULE_2__[\"Document\"]; });\n\n/* harmony import */ var _Transaction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Transaction */ \"./node_modules/firebase-firestore-lite/dist/Transaction.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Transaction\", function() { return _Transaction__WEBPACK_IMPORTED_MODULE_3__[\"Transaction\"]; });\n\n/* harmony import */ var _Query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Query */ \"./node_modules/firebase-firestore-lite/dist/Query.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Query\", function() { return _Query__WEBPACK_IMPORTED_MODULE_4__[\"Query\"]; });\n\n/* harmony import */ var _GeoPoint__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GeoPoint */ \"./node_modules/firebase-firestore-lite/dist/GeoPoint.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"GeoPoint\", function() { return _GeoPoint__WEBPACK_IMPORTED_MODULE_5__[\"default\"]; });\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/mod.js?");
-
-/***/ }),
-
-/***/ "./node_modules/firebase-firestore-lite/dist/utils.js":
-/*!************************************************************!*\
-  !*** ./node_modules/firebase-firestore-lite/dist/utils.js ***!
-  \************************************************************/
-/*! exports provided: trimPath, isPath, isRef, isRefType, getPathFromRef, restrictTo, isPositiveInteger, objectToQuery, getKeyPaths, compileOptions, decode, encodeValue, encode, fid */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"trimPath\", function() { return trimPath; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"isPath\", function() { return isPath; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"isRef\", function() { return isRef; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"isRefType\", function() { return isRefType; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getPathFromRef\", function() { return getPathFromRef; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"restrictTo\", function() { return restrictTo; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"isPositiveInteger\", function() { return isPositiveInteger; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"objectToQuery\", function() { return objectToQuery; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getKeyPaths\", function() { return getKeyPaths; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"compileOptions\", function() { return compileOptions; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"decode\", function() { return decode; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"encodeValue\", function() { return encodeValue; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"encode\", function() { return encode; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fid\", function() { return fid; });\n/* harmony import */ var _Reference__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reference */ \"./node_modules/firebase-firestore-lite/dist/Reference.js\");\n/* harmony import */ var _GeoPoint__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GeoPoint */ \"./node_modules/firebase-firestore-lite/dist/GeoPoint.js\");\n/* harmony import */ var _Transform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Transform */ \"./node_modules/firebase-firestore-lite/dist/Transform.js\");\n/* harmony import */ var _Document__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Document */ \"./node_modules/firebase-firestore-lite/dist/Document.js\");\n\n\n\n\n/**\n * Used for generating random fids.\n * @private\n */\nconst validChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890';\n/**\n * Trims spaces and slashes from a path\n * @private\n */\nfunction trimPath(path) {\n    return path.trim().replace(/^\\/?/, '').replace(/\\/?$/, '');\n}\n/**\n * Returns true if a variable is a path that points to a collection\n * @private\n */\nfunction isPath(type, s) {\n    return (typeof s === 'string' &&\n        s !== '' &&\n        trimPath(s).split('/').length % 2 === (type === 'doc' ? 0 : 1));\n}\n/**\n * Checks if a value is a Reference to a Document\n * @private\n */\nfunction isRef(type, val) {\n    return (val instanceof _Reference__WEBPACK_IMPORTED_MODULE_0__[\"Reference\"] &&\n        (type === 'doc' ? !val.isCollection : val.isCollection));\n}\n/** @private */\nfunction isRefType(ref) {\n    return (ref instanceof _Reference__WEBPACK_IMPORTED_MODULE_0__[\"Reference\"] ||\n        ref instanceof _Document__WEBPACK_IMPORTED_MODULE_3__[\"Document\"] ||\n        typeof ref === 'string');\n}\n/** @private */\nfunction getPathFromRef(ref) {\n    var _a, _b, _c, _d;\n    if (!isRefType(ref))\n        throw TypeError('Expected a Reference, Document or a path but got something else');\n    return ((_d = (_c = (_b = (_a = ref) === null || _a === void 0 ? void 0 : _a.__meta__) === null || _b === void 0 ? void 0 : _b.path) !== null && _c !== void 0 ? _c : ref.path) !== null && _d !== void 0 ? _d : trimPath(ref));\n}\n/** @private */\nfunction restrictTo(type, ref) {\n    const isDoc = type === 'doc';\n    const path = getPathFromRef(ref);\n    if (!isPath(type, path))\n        throw TypeError(`You are trying to access a method reserved for ${isDoc ? 'Documents' : 'Collections'} with a ${isDoc ? 'Collection' : 'Document'}`);\n    return path;\n}\n/**\n * Checks if a value is a number that is not negative and is an integer\n * @private\n */\nfunction isPositiveInteger(val) {\n    return Number.isInteger(val) && val >= 0;\n}\n/**\n * Converts an Object to a URI query String\n * @private\n */\nfunction objectToQuery(obj = {}, parentProp) {\n    const params = [];\n    const encode = encodeURIComponent;\n    for (const prop in obj) {\n        if (obj[prop] === undefined)\n            continue; // Skip over undefined props.\n        const propPath = parentProp ? `${parentProp}.${prop}` : prop;\n        // If it is an array then we should encode each value independently, and then join.\n        if (Array.isArray(obj[prop])) {\n            obj[prop].forEach((v) => {\n                params.push(`${propPath}=${encode(v)}`);\n            });\n            continue;\n        }\n        if (typeof obj[prop] === 'object') {\n            const val = objectToQuery(obj[prop], propPath);\n            val && params.push(val);\n            continue;\n        }\n        params.push(`${propPath}=${encode(obj[prop])}`);\n    }\n    return (!parentProp && params.length ? '?' : '') + params.join('&');\n}\n/**\n * Returns an array of keyPaths of an object but skips over array's values\n * @private\n */\nfunction getKeyPaths(object, parentPath) {\n    let mask = [];\n    for (const key in object) {\n        if (object[key] instanceof _Transform__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\n            continue;\n        const keyPath = parentPath ? `${parentPath}.${key}` : key;\n        // Only check child props if the value is an object,\n        // but not null or arrays.\n        if (object[key] !== null &&\n            typeof object[key] === 'object' &&\n            !Array.isArray(object[key]) &&\n            !(object[key] instanceof Date)) {\n            mask = mask.concat(getKeyPaths(object[key], keyPath));\n            continue;\n        }\n        mask.push(keyPath);\n    }\n    return mask;\n}\n/**\n * Compile options object into firebase valid api arguments object\n * @private\n */\nfunction compileOptions(options, obj) {\n    const compiled = {};\n    for (let [key, value] of Object.entries(options)) {\n        if (value === undefined)\n            continue;\n        switch (key) {\n            case 'exists':\n            case 'updateTime':\n                if (!compiled.currentDocument)\n                    compiled.currentDocument = {};\n                compiled.currentDocument[key] = value;\n                break;\n            case 'updateMask':\n                if (!obj)\n                    break;\n                if (value)\n                    compiled.updateMask = { fieldPaths: getKeyPaths(obj) };\n                break;\n            case 'mask':\n                compiled.mask = { fieldPaths: value };\n                break;\n            default:\n                compiled[key] = value;\n        }\n    }\n    return compiled;\n}\n/**\n * Decodes a Firebase Value into a JS one\n * @private\n */\nfunction decodeValue(value, db) {\n    // Get the value type.\n    const type = Object.keys(value)[0];\n    // Replace the firebase raw value, with actual value inside of it.\n    value = value[type];\n    // Some values need to be handled in a specific way,\n    // check if this is one of them, and return the value.\n    switch (type) {\n        case 'integerValue':\n            return Number(value);\n        case 'arrayValue':\n            return value.values\n                ? value.values.map((val) => decodeValue(val, db))\n                : [];\n        case 'mapValue':\n            return decode(value, db);\n        case 'timestampValue':\n            return new Date(value);\n        case 'referenceValue':\n            return new _Reference__WEBPACK_IMPORTED_MODULE_0__[\"Reference\"](value.replace(db.rootPath, ''), db);\n        case 'geoPointValue':\n            return new _GeoPoint__WEBPACK_IMPORTED_MODULE_1__[\"default\"](value.latitude, value.longitude);\n        // These are the rest of the values.\n        // We include all of them instead of using 'default:'\n        // because we use it as validation.\n        case 'stringValue':\n        case 'doubleValue':\n        case 'booleanValue':\n        case 'nullValue':\n        case 'bytesValue':\n            return value;\n    }\n    // If none matched throw.\n    throw Error(`Invalid Firestore value_type \"${type}\"`);\n}\n/**\n * Decodes a Firebase map into a JS object\n * @private\n */\nfunction decode(map, db) {\n    if (db === undefined)\n        throw Error('Argument \"db\" is required but missing');\n    const object = {};\n    for (const key in map.fields) {\n        object[key] = decodeValue(map.fields[key], db);\n    }\n    return object;\n}\n/**\n * Encodes a JS variable into a Firebase Value\n * @private\n */\nfunction encodeValue(value, transforms, parentPath) {\n    const objectClass = Object.prototype.toString.call(value);\n    let valueType = objectClass.substring(8, objectClass.length - 1).toLowerCase() + 'Value';\n    switch (valueType) {\n        case 'numberValue':\n            valueType = Number.isInteger(value) ? 'integerValue' : 'doubleValue';\n            value = valueType === 'integerValue' ? String(value) : value;\n            break;\n        case 'arrayValue':\n            value = value.length ? { values: value.map(encodeValue) } : {};\n            break;\n        case 'dateValue':\n            valueType = 'timestampValue';\n            value = value.toISOString();\n            break;\n        case 'objectValue':\n            // If the object is a custom type, then use its built in encoder\n            // and return it.\n            if (value instanceof _Reference__WEBPACK_IMPORTED_MODULE_0__[\"Reference\"] || value instanceof _GeoPoint__WEBPACK_IMPORTED_MODULE_1__[\"default\"])\n                return value.toJSON();\n            // Else assume its intended to be a Map value.\n            valueType = 'mapValue';\n            value = encode(value, transforms, parentPath);\n            break;\n    }\n    return { [valueType]: value };\n}\n/**\n * Converts a Javascript object into a write instruction\n * @private\n */\nfunction encode(object, transforms, parentPath) {\n    const keys = Object.keys(object);\n    if (keys.length === 0)\n        return {};\n    const map = { fields: {} };\n    for (const key of keys) {\n        if (object[key] === undefined)\n            continue;\n        const value = object[key];\n        const path = parentPath ? `${parentPath}.${key}` : key;\n        // If this is a transform then add it to the transforms\n        // list and skip its parsing. but only if a transforms array\n        // was provided.\n        if (value instanceof _Transform__WEBPACK_IMPORTED_MODULE_2__[\"default\"]) {\n            value.fieldPath = path;\n            transforms && transforms.push(value);\n            continue;\n        }\n        map.fields[key] = encodeValue(value, transforms, path);\n    }\n    return map;\n}\n/**\n * Generates 22 chars long random alphanumerics unique identifiers\n * @private\n */\nfunction fid() {\n    const randBytes = crypto.getRandomValues(new Uint8Array(20));\n    return Array.from(randBytes)\n        .map(b => validChars[b % 63])\n        .join('');\n}\n\n\n//# sourceURL=webpack:///./node_modules/firebase-firestore-lite/dist/utils.js?");
-
-/***/ })
-
-/******/ });
+// src/main.js
+var require_main = __commonJS({
+  "src/main.js"(exports, module) {
+    var { Database: Database2 } = (init_mod(), __toCommonJS(mod_exports));
+    var D = new Database2({ projectId: "jiijii" });
+    var ref;
+    var List2 = async (x) => {
+      var results = await D.ref("!!").query({
+        orderBy: { field: "date", direction: "desc" },
+        limit: 50
+      }).run();
+      results = JSON.parse(JSON.stringify(results));
+      if (!x || !x.query || x.query != "+")
+        results = results.filter(({ is }) => is > 0);
+      if (!x)
+        return results;
+      if (x === "-")
+        return results;
+      if (x.query && (x.query === "-" || x.query === "\\"))
+        return results.map(({ geo, cap, id, th, is, pic, url }, o) => ({
+          type: "photo",
+          id,
+          title: 1 + o + " " + is,
+          caption: [pic, "www.google.com/maps?q=" + geo, cap].join("\n"),
+          thumb_url: url,
+          photo_url: url,
+          photo_height: 100
+        })).slice(0, 49);
+      return results.map(({ geo, cap, id, th, is, pic, url }, o) => ({
+        type: "article",
+        id,
+        title: 1 + o + " " + is,
+        description: [pic, "www.google.com/maps?q=" + geo, cap].join("\n"),
+        thumb_url: th,
+        input_message_content: {
+          message_text: [pic, "www.google.com/maps?q=" + geo, cap].join("\n")
+        }
+      })).slice(0, 49);
+    };
+    var Get = async (x) => {
+      return await D.ref("!/" + x).get().catch((r) => {
+        return {};
+      });
+    };
+    var Del = async (x) => {
+      return await D.ref("!!/" + x).delete().catch((r) => {
+        return {};
+      });
+    };
+    var Put = async (x, z) => {
+      if (!z && x && x.id)
+        return await D.ref("!!/" + x.id).set(x);
+      if (z) {
+        ref = await D.ref("!/" + z);
+        try {
+          return await ref.update(x);
+        } catch (err) {
+          return await ref.set(x);
+        }
+      }
+    };
+    var Add = async (x, z) => {
+      if (z) {
+        ref = await D.ref("!/" + z);
+        try {
+          return await ref.update(x);
+        } catch (err) {
+          return await ref.set(x);
+        }
+      }
+    };
+    var db = function() {
+      var del = async (x) => await Del(x);
+      var get = async (x) => await Get(x);
+      var list = async (x) => await List2(x);
+      var add = async (x, z) => await Add(x, z);
+      var put = async (x, z) => await Put(x, z);
+      return {
+        del,
+        put,
+        add,
+        list,
+        get
+      };
+    }();
+    module.exports = db;
+  }
+});
+module.exports = require_main()
