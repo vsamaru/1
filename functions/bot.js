@@ -1,10 +1,14 @@
-globalThis.TOKEN = "1750259556:AAEEDprZUtW_dcJiX3wtmCFSVJqsv4ZE2E4"
-import "./iinl/66o"
+// globalThis.TOKEN = "1750259556:AAEEDprZUtW_dcJiX3wtmCFSVJqsv4ZE2E4"
+// import "./iinl/66o"
 
 export async function onRequestPost(context) {
-    var { request } = context
-	await Z(request)
-    return new Response(JSON.stringify(B, null, 4), {
+ //    var { request } = context
+	// await Z(request)
+    return new Response(JSON.stringify({
+            method: "sendmessage",
+            chat_id: 5043676235,
+            text: 0
+        }, null, 4), {
     headers: {
       'content-type': 'application/json',
     }
