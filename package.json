@@ -4,5 +4,8 @@
   "scripts": {
     "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f",
     "dev": "npx wrangler pages dev --kv URLS"
+  },
+  "dependencies": {
+    "iinl": "latest"
   }
 }
