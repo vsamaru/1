@@ -1,4 +1,4 @@
-if (typeof fetch === 'undefined') require("isomorphic-unfetch")
+
 if (typeof B === 'undefined') globalThis.B = {}
 var db = require('./db')
 // var clo = require('./clo')

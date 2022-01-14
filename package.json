@@ -6,6 +6,6 @@
     "dev": "npx wrangler pages dev --kv URLS"
   },
   "dependencies": {
-    "iinl": "latest"
+    "firebase-firestore-lite": "latest"
   }
 }
