@@ -3,7 +3,7 @@
 
 export async function onRequestPost({
   request,
-  env: { URLS }
+   { URLS }
 }) {
 	request = await request.json()
  //    var { request } = context

@@ -1,107 +1,107 @@
 
 
-// export async function onRequest(context) {
-//   // Contents of context object
-//   const {
-//     request, // same as existing Worker API
-//     env, // same as existing Worker API
-//     params, // if filename includes [id] or [[path]]
-//     waitUntil, // same as ctx.waitUntil in existing Worker API
-//     next, // used for middleware or to fetch assets
-//     data, // arbitrary space for passing data between middlewares
-//   } = context;
+export async function onRequest(context) {
+  // Contents of context object
+  const {
+    request, // same as existing Worker API
+    env, // same as existing Worker API
+    params, // if filename includes [id] or [[path]]
+    waitUntil, // same as ctx.waitUntil in existing Worker API
+    next, // used for middleware or to fetch assets
+    data, // arbitrary space for passing data between middlewares
+  } = context;
 
-//   return new Response("Hello, world!");
-// }
-export async function onRequestPost(context) {
-export const onRequestPost: PagesFunction<{ URLS: KVNamespace }> = async ({
-  request,
-  env: { URLS },
-}) => {
-  const url = await request.text();
+  return new Response("Hello, world!");
+}
 
-  try {
-    new URL(url);
-  } catch (error) {
-    return new Response(null, { status: 400 });
-  }
+// export const onRequestPost: PagesFunction<{ URLS: KVNamespace }> = async ({
+//   request,
+//   env: { URLS },
+// }) => {
+//   const url = await request.text();
 
-  const slug = await (async () => {
-    const existingSlug = await URLS.get(url);
+//   try {
+//     new URL(url);
+//   } catch (error) {
+//     return new Response(null, { status: 400 });
+//   }
 
-    if (existingSlug) {
-      return existingSlug;
-    }
+//   const slug = await (async () => {
+//     const existingSlug = await URLS.get(url);
 
-    const newSlug = generateRandomSlug();
+//     if (existingSlug) {
+//       return existingSlug;
+//     }
 
-    await Promise.all([URLS.put(url, newSlug), URLS.put(newSlug, url)]);
+//     const newSlug = generateRandomSlug();
 
-    return newSlug;
-  })();
+//     await Promise.all([URLS.put(url, newSlug), URLS.put(newSlug, url)]);
 
-  return new Response(slug);
-};
+//     return newSlug;
+//   })();
 
-const handler: ExportedHandler<{ URLS: KVNamespace }> = {
-  async fetch(request, { URLS }, ctx) {
-    const requestUrl = new URL(request.url);
+//   return new Response(slug);
+// };
 
-    if (requestUrl.pathname === "/create") {
-      const headers = {
-        "access-control-allow-origin": "https://shortr-cf.pages.dev",
-      };
+// const handler: ExportedHandler<{ URLS: KVNamespace }> = {
+//   async fetch(request, { URLS }, ctx) {
+//     const requestUrl = new URL(request.url);
 
-      if (request.method !== "POST") {
-        return new Response(null, { status: 405, headers });
-      }
+//     if (requestUrl.pathname === "/create") {
+//       const headers = {
+//         "access-control-allow-origin": "https://shortr-cf.pages.dev",
+//       };
 
-      const body = await request.text();
+//       if (request.method !== "POST") {
+//         return new Response(null, { status: 405, headers });
+//       }
 
-      if (!body) {
-        return new Response(null, { status: 400, headers });
-      }
+//       const body = await request.text();
 
-      try {
-        new URL(body);
-      } catch (error) {
-        return new Response(null, { status: 400, headers });
-      }
+//       if (!body) {
+//         return new Response(null, { status: 400, headers });
+//       }
 
-      const existingSlug = await URLS.get(body);
+//       try {
+//         new URL(body);
+//       } catch (error) {
+//         return new Response(null, { status: 400, headers });
+//       }
 
-      if (existingSlug) {
-        return new Response(existingSlug, { headers });
-      }
+//       const existingSlug = await URLS.get(body);
 
-      const slug = generateRandomSlug();
+//       if (existingSlug) {
+//         return new Response(existingSlug, { headers });
+//       }
 
-      await Promise.all([URLS.put(body, slug), URLS.put(slug, body)]);
+//       const slug = generateRandomSlug();
 
-      return new Response(slug, { headers });
-    }
+//       await Promise.all([URLS.put(body, slug), URLS.put(slug, body)]);
 
-    const slugMatch = /^\/([^/]+)$/.exec(requestUrl.pathname);
+//       return new Response(slug, { headers });
+//     }
 
-    if (!slugMatch) {
-      return new Response(null, { status: 404 });
-    }
+//     const slugMatch = /^\/([^/]+)$/.exec(requestUrl.pathname);
 
-    const [, slug] = slugMatch;
+//     if (!slugMatch) {
+//       return new Response(null, { status: 404 });
+//     }
 
-    const url = await URLS.get(slug);
+//     const [, slug] = slugMatch;
 
-    if (!url) {
-      return new Response(null, { status: 404 });
-    }
+//     const url = await URLS.get(slug);
 
-    return new Response(null, {
-      status: 302,
-      headers: {
-        location: url,
-      },
-    });
-  },
-};
+//     if (!url) {
+//       return new Response(null, { status: 404 });
+//     }
 
-export default handler;
+//     return new Response(null, {
+//       status: 302,
+//       headers: {
+//         location: url,
+//       },
+//     });
+//   },
+// };
+
+// export default handler;
