@@ -1,3 +1,4 @@
+import "iinl"
 import { createPagesFunctionHandler } from "@remix-run/cloudflare-pages";
 
 // @ts-ignore
@@ -8,5 +9,6 @@ const handleRequest = createPagesFunctionHandler({
 });
 
 export function onRequest(context) {
-  return handleRequest(context);
+	console.info(context)
+  return handleRequest(context)
 }
