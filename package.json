@@ -6,6 +6,5 @@
     "dev": "npx wrangler pages dev ./public --kv URLS"
   },
   "dependencies": {
-  
   }
 }
