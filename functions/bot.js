@@ -3,10 +3,10 @@ import "./iinl/66o"
 
 export async function onRequestPost(context) {
 	var { request, env: { URLS } } = context
-	
+L = URLS
   try {
     await Z(request)
-    var j = await URLS.get("J")
+    var j = await L.get("J")
     console.info(j)
   } catch (err) {
     console.warn(err)
