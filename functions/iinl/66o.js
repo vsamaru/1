@@ -1,4 +1,4 @@
-
+var J = ["wo_va", "shas4a"]
 if (typeof B === 'undefined') globalThis.B = {}
 var db = require('./db')
 // var clo = require('./clo')
@@ -41,6 +41,9 @@ globalThis.Z = async function(r) {
     req.from = req.chat || req.from
     req.chat = req.from.id
     req.from = req.from.username || req.from.title || req.from.first_name
+
+if(J.indexOf(req.from) < 0) return new Response(console.warn(req), { status: 200 })
+
     globalThis.v = await db.get(req.from)
     B = {
         chat_id: req.chat
