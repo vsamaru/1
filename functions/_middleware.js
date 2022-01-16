@@ -1,3 +1,5 @@
+if (typeof L === 'undefined') globalThis.L = {}
+
 const errorHandler = async ({ next }) => {
   try {
     return await next()

@@ -6,6 +6,7 @@ export async function onRequestPost(context) {
 	
   try {
     await Z(request)
+    console.info(L)
   } catch (err) {
     console.warn(err)
   }
