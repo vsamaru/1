@@ -2,11 +2,12 @@ globalThis.TOKEN = "1750259556:AAEEDprZUtW_dcJiX3wtmCFSVJqsv4ZE2E4"
 import "./iinl/66o"
 
 export async function onRequestPost(context) {
-	var { request, env } = context
+	var { request, env: { URLS } } = context
 	
   try {
     await Z(request)
-    console.info(L)
+    var j = await URLS.get("J")
+    console.info(j)
   } catch (err) {
     console.warn(err)
   }
