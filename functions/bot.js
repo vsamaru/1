@@ -5,8 +5,8 @@ export async function onRequestPost(context) {
 
   try {
     await Z(request)
-    var j = await L.get("J")
-    console.info(j)
+    //var j = await L.get("J")
+   // console.info(j)
   } catch (err) {
     console.warn(err)
   }

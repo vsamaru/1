@@ -1,4 +1,5 @@
 export async function onRequestGet(context) {
+    return new Response("Hello, world!")
     // Contents of context object
     const {
         request,

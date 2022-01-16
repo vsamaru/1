@@ -9,22 +9,12 @@
         
         var pathname = window.location.pathname
         
-    function g() {
-        
 
-        function showPosition(position) {
-
-            localStorage.geo = position.coords.latitude +
-                "," + position.coords.longitude
-        }
-        if (navigator.geolocation)  return navigator.geolocation.watchPosition(showPosition)
-        
-       
-    }
     L.mapquest.key = 'brX4s7eKqZr24Z1icIAJzRYOBQEWxtVv'
     var map
     window.onload = async function() {
-        if (!localStorage.geo) await g()
+        alert(pathname)
+        if (!localStorage.geo) localStorage.geo = "49.416950,32.098686"
         var geo = localStorage.geo.split(",")
         map = L.mapquest.map('map', {
             center: geo,
@@ -32,6 +22,8 @@
             zoom: 16
         })
         L.mapquest.textMarker(geo, {
+            text: 'Coffee Shop',
+            subtext: 'Iconic coffeehouse chain',
             position: 'right',
             type: 'marker',
             draggable: true,

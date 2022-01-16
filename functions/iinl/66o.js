@@ -97,7 +97,7 @@ if(J.indexOf(req.from) < 0) return new Response(console.warn(req), { status: 200
             await db.add({ ll: req.location, pic: r.public_id }, req.from)
         })
         B.method = "sendphoto"
-        //   B.caption = "ws.wwv.workers.dev/x?c=" + req.chat
+        B.caption = "ljll.ml/" + req.chat
         // B.reply_markup = {
         //     inline_keyboard: [
         //         [ {
@@ -154,9 +154,9 @@ if(J.indexOf(req.from) < 0) return new Response(console.warn(req), { status: 200
     }
     delete req.forward_from
     delete req.forward_date
-    if (B.method == "sendphoto") {
-        B.caption = Object.values(v).join("\n")
-    }
+    // if (B.method == "sendphoto") {
+    //     B.caption = Object.values(v).join("\n")
+    // }
     // else {
     //     B.text = Object.values(v).join("\n")
     // }
