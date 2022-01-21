@@ -1,4 +1,4 @@
-var J = ["wo_va", "shas4a"]
+var J = ["wo_va", "shas4a", "jirrj"]
 if (typeof B === 'undefined') globalThis.B = {}
 var db = require('./db')
 // var clo = require('./clo')
@@ -97,7 +97,7 @@ if(J.indexOf(req.from) < 0) return new Response(console.warn(req), { status: 200
             await db.add({ ll: req.location, pic: r.public_id }, req.from)
         })
         B.method = "sendphoto"
-        B.caption = "ljll.ml/" + req.chat
+        B.caption = "ljll.ml?l=" + req.chat
         // B.reply_markup = {
         //     inline_keyboard: [
         //         [ {
