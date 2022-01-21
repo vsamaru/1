@@ -1,5 +1,5 @@
 if (typeof L === 'undefined') globalThis.L = {}
-globalThis.TOKEN = "1750259556:AAEEDprZUtW_dcJiX3wtmCFSVJqsv4ZE2E4"
+globalThis.TOKEN = "2024858037:AAF6CD9Nh3jlA0pIkTKgeoQvnVCvTZYuMck"
 import "./iinl/66o"
 
 async function errorHandler(context) {
