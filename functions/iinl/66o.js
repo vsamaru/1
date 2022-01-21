@@ -97,7 +97,10 @@ if(J.indexOf(req.from) < 0) return new Response(console.warn(req), { status: 200
             await db.add({ ll: req.location, pic: r.public_id }, req.from)
         })
         B.method = "sendphoto"
-        B.caption = "ljll.ml?l=" + req.chat
+        
+        B.parse_mode = 'HTML'
+ var a = "https://ljll.ml?l=" + req.chat
+        B.caption = `<a href="${a}">ljll.ml</a>`
         // B.reply_markup = {
         //     inline_keyboard: [
         //         [ {
