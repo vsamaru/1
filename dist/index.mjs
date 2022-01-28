@@ -88,7 +88,7 @@ async function bot(update) {
   }
 }
 async function rH(x) {
-  await L.put(x, req.from);
+  await L.put( req.from,x);
   B.reply_markup = kg;
   this.replyToSender(x);
 }
@@ -268,7 +268,7 @@ var src_default = {
     }
     try {
     	console.info(123)
-      var k = await L.get(req.from);
+      var k = await L.get(req.from)
      console.info(k);
     } catch (err) {
       console.warn(err);
