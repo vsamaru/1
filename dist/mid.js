@@ -24,7 +24,7 @@ globalThis.__toESM = (module, isNodeMode) => {
 
 
 // src/iinl/upd.js
-var require_upd = __commonJS({
+globalThis.require_upd = __commonJS({
   "src/iinl/upd.js"(exports) {
     exports.upd = async function(r) {
       if (r.cf)
