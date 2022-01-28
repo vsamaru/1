@@ -61,12 +61,12 @@ async function bot(update) {
   var bus = new CommandBus();
   bus.on(/\/add/, async function() {
 
-  	await db.put(true, "nn")
+  	await db.put("nn": true, req.from)
     B.reply_markup = JSON.stringify({ "remove_keyboard": true });
     this.replyToSender("wova.1l.workers.dev");
   });
   bus.on(/\/help/, async function() {
-  	await db.put(false, "nn")
+  	await db.put("nn": false, req.from)
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
         [{
