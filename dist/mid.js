@@ -57,7 +57,7 @@ globalThis.TOKEN = req.T || "5097029098:AAHHHw5asHgL6NZgzIIQDumrn04A9AoxEkk";
         req.photo = [{
           file_size: req.document.file_size,
           file_id: req.document.file_id, 
-          width: 960
+          width: 1280
         }];
         delete req.document;
       }
