@@ -1,12 +1,12 @@
-name = "ii"
+name = "4"
 type = "javascript"
 account_id = "d1574ff4d207bc23602cc79fc78b7b2a"
 workers_dev = true
 compatibility_date = "2021-12-26"
 
-# [[kv_namespaces]]
-# binding = "LOGS"
-# id = "ac73d8efee62405fac585f4fed418dac"
+[[kv_namespaces]]
+binding = "G"
+id = "8cc4b2e13c7845e99f2d69a6ec48e906"
 
 # [vars]
 # HOOK_PATH = "/"
