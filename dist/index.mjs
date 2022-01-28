@@ -178,7 +178,14 @@ globalThis.Z = async function(r) {
   if (req.ref) {
     await db.add({ ref: req.ref }, req.from);
   }
-  if (req.photo) {
+    if (req.photo) {
+  	var t = ''
+  	 if (!v.ref) t += " noRef! "
+  	 	if (!v.ll) t += " noLL! "
+    B.text = t
+    B.method = "sendmessage";
+  }
+  if (req.photo && v.ref && v.ll) {
   	
     var t = (v.ref + "%20" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
