@@ -66,7 +66,7 @@ globalThis.TOKEN = req.T || "5097029098:AAHHHw5asHgL6NZgzIIQDumrn04A9AoxEkk";
         if (!req.caption) {
           req.caption = "";
         } else {
-          req.caption = "%20" + req.caption.toLowerCase()
+          req.caption = " " + req.caption.toLowerCase()
         }
         req.photo = req.photo[req.photo.length - 1];
         req.width = req.photo.width;

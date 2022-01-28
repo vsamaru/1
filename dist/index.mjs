@@ -192,7 +192,7 @@ globalThis.Z = async function(r) {
     B.method = "sendmessage";
   }
   if (req.result_id) {
-    await db.put({ is: -1 }, req.result_id);
+    await db.put({ is: -1 }, req.result_id)
   }
   if (req.location && !req.id && !req.result_id) {
     B.photo = `https://www.mapquestapi.com/staticmap/v5/map?key=brX4s7eKqZr24Z1icIAJzRYOBQEWxtVv&banner=${req.location}|lg-21211f-f5e6e4&type=hyb&zoom=17&size=400,400@2x&locations=${req.location}|circle-lg-21211f-f5e6e4`;
