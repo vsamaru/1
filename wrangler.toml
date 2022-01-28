@@ -17,5 +17,6 @@ compatibility_date = "2021-12-26"
 [build]
 command = ""
 [build.upload]
+dir = "./"
 format = "modules"
 main = "./index.mjs"
