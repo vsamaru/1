@@ -80,7 +80,7 @@ async function bot(update) {
   bus.on(/^(?=.*photo)(?=.*reply_to).*$/, reply);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?_\s*([A-Za-z0-9_]+)?/, randomJoke);
   bus.on(/\/start \s*([A-Za-z0-9_]+)?/, deep);
-  bus.on(/#\s*([\p{IsCyrillic}]+)?/, rH);
+  bus.on(/#*([\u0000-\u0019\u0021-\uFFFF]+)?/, rH);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?/, randomJ);
   bot2.register(bus);
   if (update) {
