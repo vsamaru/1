@@ -29,8 +29,7 @@ var require_upd = __commonJS({
     exports.upd = async function(r) {
       if (r.cf)
         r = await r.clone().json();
-      globalThis.req = r;
-     //  console.info(req)
+      globalThis.req = r;   
 globalThis.TOKEN = req.T || "5097029098:AAHHHw5asHgL6NZgzIIQDumrn04A9AoxEkk";
       req[Object.keys(req)[1]].type = Object.keys(req)[1];
       req = req[Object.keys(req)[1]];
@@ -978,7 +977,7 @@ var require_db = __commonJS({
     });
     module.exports = require_main();
   }
-});
+})
 
 // src/iinl/html.js
 var require_html = __commonJS({
