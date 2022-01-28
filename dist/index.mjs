@@ -80,7 +80,7 @@ async function bot(update) {
   bus.on(/^(?=.*photo)(?=.*reply_to).*$/, reply);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?_\s*([A-Za-z0-9_]+)?/, randomJoke);
   bus.on(/\/start \s*([A-Za-z0-9_]+)?/, deep);
-  bus.on(/#*(.+)?/, rH);
+  bus.on(/#\s*(.+)?/, rH);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?/, randomJ);
   bot2.register(bus);
   if (update) {
@@ -88,7 +88,7 @@ async function bot(update) {
   }
 }
 async function rH(x) {
-  await L.put( req.from,x);
+  await L.put( req.from,x)
   B.reply_markup = kg;
   this.replyToSender(x);
 }
