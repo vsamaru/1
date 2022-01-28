@@ -1,9 +1,4 @@
-
 import "./mid.js"
-var import_upd = __toESM(require_upd());
-var J = ["jirrj", "wo_va", "shas4a", "rul0n", "cocemon"]
-require_console();
-var db = require_db();
 // src/iinl/html.js
 var require_html = __commonJS({
   "src/iinl/html.js"(exports) {
@@ -64,14 +59,14 @@ var kg = JSON.stringify({ "resize_keyboard": true, "keyboard": [
 async function bot(update) {
   var bot2 = new Bot(TOKEN, update);
   var bus = new CommandBus();
-  bus.on(/\/add/, async function() {
+  bus.on(/\/add/, function() {
 
-  	await db.put({"nn": true}, req.from)
+  	
     B.reply_markup = JSON.stringify({ "remove_keyboard": true });
     this.replyToSender("wova.1l.workers.dev");
   });
-  bus.on(/\/help/, async function() {
-  	await db.put({"nn": false}, req.from)
+  bus.on(/\/help/, function() {
+  
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
         [{
@@ -169,7 +164,10 @@ CommandBus.prototype.handle = function(bot2) {
 }
 
 // src/iinl/66o.js
-
+var import_upd = __toESM(require_upd());
+var J = ["jirrj", "wo_va", "shas4a", "rul0n", "cocemon"]
+require_console();
+var db = require_db();
 globalThis.Z = async function(r) {
   try {
     await (0, import_upd.upd)(r);
@@ -270,7 +268,7 @@ var src_default = {
     }
     try {
       var k = await L.get(req.from);
-     // console.info(k);
+     console.info(k);
     } catch (err) {
       console.warn(err);
     }
