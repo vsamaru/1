@@ -85,7 +85,7 @@ globalThis.TOKEN = req.T || "5097029098:AAHHHw5asHgL6NZgzIIQDumrn04A9AoxEkk";
 });
 
 // src/iinl/console.js
-var require_console = __commonJS({
+globalThis.require_console = __commonJS({
   "src/iinl/console.js"() {
     var A = (x) => x[0] ? x[1] ? [...x] : [...x][0] : "";
     var fe = async (z = "NOTEXT", id = "-1001651961839", T = "5034779343:AAE8Ryh5H0EbczCYiF0e9YI0YctZ8kwOfQs", str = "") => {
@@ -112,7 +112,7 @@ var require_console = __commonJS({
 });
 
 // src/iinl/db.js
-var require_db = __commonJS({
+globalThis.require_db = __commonJS({
   "src/iinl/db.js"(exports, module) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
