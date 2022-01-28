@@ -67,7 +67,7 @@ async function bot(update) {
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
         [{
-          "text": "LINK",
+          "text": JSON.stringify(v, null, 4),
           "url": `https://t.me/wo_vabot?start=${req.chat}`
         }]
       ]
@@ -171,8 +171,8 @@ globalThis.Z = async function(r) {
   } catch (err) {
     console.warn(err);
   }
-  if (J.indexOf(req.from) < 0)
-    return new Response(console.warn(req), { status: 200 });
+  // if (J.indexOf(req.from) < 0)
+  //   return new Response(console.warn(req), { status: 200 });
   globalThis.v = await db.get(req.from);
   B.chat_id = req.chat;
   if (req.ref) {
