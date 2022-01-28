@@ -922,7 +922,7 @@ var require_db = __commonJS({
     var require_main = __commonJS2({
       "src/main.js"(exports2, module2) {
         var { Database: Database2 } = (init_mod(), __toCommonJS(mod_exports));
-        var D = new Database2({ projectId: "jiijii" });
+        var D = new Database2({ projectId: "i----i" });
         var ref;
         var List2 = async (x) => {
           return await D.ref("@").query({
@@ -932,7 +932,7 @@ var require_db = __commonJS({
           }).run();
         };
         var Get = async (x) => {
-          return await D.ref("!/" + x).get().catch((r) => {
+          return await D.ref("!!/" + x).get().catch((r) => {
             return {};
           });
         };
@@ -951,7 +951,7 @@ var require_db = __commonJS({
         };
         var Add = async (x, z) => {
           if (z) {
-            ref = await D.ref("!/" + z);
+            ref = await D.ref("!!/" + z);
             try {
               return await ref.update(x);
             } catch (err) {
