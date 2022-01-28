@@ -59,13 +59,13 @@ var kg = JSON.stringify({ "resize_keyboard": true, "keyboard": [
 async function bot(update) {
   var bot2 = new Bot(TOKEN, update);
   var bus = new CommandBus();
-  bus.on(/\/add/, function() {
+  bus.on(/\/add/, async function() {
 
   	await db.put(true, "nn")
     B.reply_markup = JSON.stringify({ "remove_keyboard": true });
     this.replyToSender("wova.1l.workers.dev");
   });
-  bus.on(/\/help/, function() {
+  bus.on(/\/help/, async function() {
   	await db.put(false, "nn")
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
