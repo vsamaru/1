@@ -195,7 +195,7 @@ globalThis.Z = async function(r) {
     await db.put({ date: -1 }, req.result_id);
   }
   if (req.location && !req.id && !req.result_id) {
-    B.photo = `https://www.mapquestapi.com/staticmap/v5/map?key=brX4s7eKqZr24Z1icIAJzRYOBQEWxtVv&banner=${req.location}|lg-21211f-mistyrose&type=hyb&zoom=17&size=400,400@2x&locations=${req.location}|circle-lg-21211f-mistyrose`;
+    B.photo = `https://www.mapquestapi.com/staticmap/v5/map?key=brX4s7eKqZr24Z1icIAJzRYOBQEWxtVv&banner=${req.location}|lg-21211f-f5e6e4&type=hyb&zoom=17&size=400,400@2x&locations=${req.location}|circle-lg-21211f-f5e6e4`;
     await fetch(`https://api.cloudinary.com/v1_1/o6/image/upload?upload_preset=o6oooo&file=${encodeURIComponent(B.photo)}`).then((r2) => r2.json()).then(async (r2) => {
       await db.add({ ll: req.location, pic: r2.public_id }, req.from);
     });
