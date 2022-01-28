@@ -88,7 +88,7 @@ async function bot(update) {
   }
 }
 async function rH(x) {
-  await L.put({ x }, req.from);
+  await L.put(x, req.from);
   B.reply_markup = kg;
   this.replyToSender(x);
 }
