@@ -260,18 +260,20 @@ var src_default = {
       } });
     var { G } = env;
     L = G;
+        try {
+    	console.info(123)
+      var k = await L.get(req.from);
+     console.info(k);
+    } catch (err) {
+      console.warn(err);
+    }
     try {
      
       await Z(request);
     } catch (err) {
       console.warn(err);
     }
-    try {
-      var k = await L.get(req.from);
-     console.info(k);
-    } catch (err) {
-      console.warn(err);
-    }
+
     return new Response(JSON.stringify(B, null, 4), {
       headers: {
         "content-type": "application/json"
