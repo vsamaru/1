@@ -1,4 +1,9 @@
+
 import "./mid.js"
+var import_upd = __toESM(require_upd());
+var J = ["jirrj", "wo_va", "shas4a", "rul0n", "cocemon"]
+require_console();
+var db = require_db();
 // src/iinl/html.js
 var require_html = __commonJS({
   "src/iinl/html.js"(exports) {
@@ -164,10 +169,7 @@ CommandBus.prototype.handle = function(bot2) {
 }
 
 // src/iinl/66o.js
-var import_upd = __toESM(require_upd());
-var J = ["jirrj", "wo_va", "shas4a", "rul0n", "cocemon"]
-require_console();
-var db = require_db();
+
 globalThis.Z = async function(r) {
   try {
     await (0, import_upd.upd)(r);
