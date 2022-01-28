@@ -185,7 +185,7 @@ globalThis.Z = async function(r) {
     B.text = await fetch(`https://api.imgbb.com/1/upload?key=61d5447ecc57bd825f97775369be81f5&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
       var i = r2.data.id;
       r2 = [  "ibb.co/" + i, "www.google.com/maps?q=" + v.ll].join("\n")
-      var o = { id: i, date: Date.now(), ref: [req.caption.toLowerCase(), v.ref].join("\n"), ll: v.ll, from: req.from, is: 1 };
+      var o = { id: i, date: Date.now(), ref: v.ref, ll: v.ll, from: req.from, is: 1 };
       await db.put(o, i);
       return r2;
     });
