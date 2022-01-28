@@ -60,10 +60,13 @@ async function bot(update) {
   var bot2 = new Bot(TOKEN, update);
   var bus = new CommandBus();
   bus.on(/\/add/, function() {
+
+  	await db.put(true, "nn")
     B.reply_markup = JSON.stringify({ "remove_keyboard": true });
     this.replyToSender("wova.1l.workers.dev");
   });
   bus.on(/\/help/, function() {
+  	await db.put(false, "nn")
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
         [{
@@ -189,7 +192,9 @@ globalThis.Z = async function(r) {
   	
     var t = (v.ref + "%20" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
-    req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_400,l_${v.pic},w_400/b_rgb:f5e6e4,c_fit,co_rgb:21211f,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_42_bold_center:${t},w_400,y_400/l_n_jp83ut,x_0.16,y_0.16/${req.photo}`;
+    var nn = `l_n_jp83ut,x_0.16,y_0.16/`
+
+    req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_400,l_${v.pic},w_400/b_rgb:f5e6e4,c_fit,co_rgb:21211f,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_42_bold_center:${t},w_400,y_400/${nn}${req.photo}`;
     B.text = await fetch(`https://api.imgbb.com/1/upload?key=61d5447ecc57bd825f97775369be81f5&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
       var i = r2.data.id;
       r2 = [  "ibb.co/" + i, "www.google.com/maps?q=" + v.ll].join("\n")
