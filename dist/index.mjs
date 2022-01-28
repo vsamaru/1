@@ -80,15 +80,17 @@ async function bot(update) {
   bus.on(/^(?=.*photo)(?=.*reply_to).*$/, reply);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?_\s*([A-Za-z0-9_]+)?/, randomJoke);
   bus.on(/\/start \s*([A-Za-z0-9_]+)?/, deep);
-  bus.on(/#\s*([\u0000-\u0019\u0021-\uFFFF]+)?/gi, rH);
+  bus.on(/#\s*([A-Za-z0-9_]+)?/, rH);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?/, randomJ);
   bot2.register(bus);
   if (update) {
     bot2.process();
   }
 }
-async function rH(x) {
+async function rH(x,y) {
 	console.info(x)
+	
+
   await L.put( req.from,x)
   B.reply_markup = kg;
   this.replyToSender(x);
