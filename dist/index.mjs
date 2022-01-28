@@ -179,12 +179,12 @@ globalThis.Z = async function(r) {
     await db.add({ ref: req.ref }, req.from);
   }
   if (req.photo) {
-    var t = (req.size + "%20" + v.ref + "%20" + req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
+    var t = (v.ref + req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
     req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_400,l_${v.pic},w_400/b_rgb:f5e6e4,c_fit,co_black,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_48_center:${t},w_400,y_400/l_n_jp83ut,x_0.17,y_0.17/${req.photo}`;
     B.text = await fetch(`https://api.imgbb.com/1/upload?key=61d5447ecc57bd825f97775369be81f5&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
       var i = r2.data.id;
-      r2 = [req.caption.toLowerCase(), "ibb.co/" + i, v.ref, "www.google.com/maps?q=" + v.ll].join("\n");
+      r2 = [ t, "ibb.co/" + i, "www.google.com/maps?q=" + v.ll].join("\n")
       var o = { id: i, date: Date.now(), ref: [req.caption.toLowerCase(), v.ref].join("\n"), ll: v.ll, from: req.from };
       await db.put(o, i);
       return r2;
