@@ -1,5 +1,5 @@
 {
-"module": "index.mjs",
+"module": "dist/index.mjs",
   "scripts": {
     "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f",
     "dev": "npx wrangler pages dev ./public --kv URLS"
