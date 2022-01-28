@@ -88,12 +88,13 @@ async function bot(update) {
   }
 }
 async function rH(x) {
+	console.info(x)
   await L.put( req.from,x)
   B.reply_markup = kg;
   this.replyToSender(x);
 }
 async function deep(x) {
-  console.info(x)
+  
   B.reply_markup = kg;
   this.replyToSender(x);
 }
