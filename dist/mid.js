@@ -930,7 +930,7 @@ var q = {
             limit: 50
           }
          q = await D.ref("@").query(q).run()
-          if(!x || x != "-") q.filter(({ is }) => is > 0)
+          if(!x || x != "-") q = q.filter(({ is }) => is > 0)
           return q
         };
         var Get = async (x) => {
