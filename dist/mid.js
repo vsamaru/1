@@ -925,7 +925,7 @@ globalThis.require_db = __commonJS({
         var ref;
         var List2 = async x => {
 var q = {
-            where: [ ["from", "==", req.from], ["date", ">=", 0]],
+            where: [ ["from", "==", req.from], ["is", ">=", 0]],
             orderBy: { field: "date", direction: "desc" },
             limit: 50
           }
