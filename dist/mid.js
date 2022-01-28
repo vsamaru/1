@@ -925,12 +925,13 @@ globalThis.require_db = __commonJS({
         var ref;
         var List2 = async x => {
 var q = {
-            where: [ ["from", "==", req.from], ["is", ">=", 0]],
+            where: [ ["from", "==", req.from] ],
             orderBy: { field: "date", direction: "desc" },
             limit: 50
           }
-          if(x == "-") q.where.pop()
-          return await D.ref("@").query(q).run()
+         q = await D.ref("@").query(q).run()
+          if(!x || x != "-") q.filter(({ is }) => is > 0)
+          return q
         };
         var Get = async (x) => {
           return await D.ref("!!/" + x).get().catch((r) => {
