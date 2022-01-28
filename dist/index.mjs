@@ -67,12 +67,12 @@ async function bot(update) {
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
         [{
-          "text": JSON.stringify(v, null, 4),
+          "text": "LINK",
           "url": `https://t.me/wo_vabot?start=${req.chat}`
         }]
       ]
     });
-    this.replyToSender(req.from + " " + req.chat);
+    this.replyToSender(JSON.stringify(v, null, 4));
   });
   bus.on(/^(?=.*photo)(?=.*reply_to).*$/, reply);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?_\s*([A-Za-z0-9_]+)?/, randomJoke);
