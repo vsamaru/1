@@ -179,6 +179,8 @@ globalThis.Z = async function(r) {
     await db.add({ ref: req.ref }, req.from);
   }
   if (req.photo) {
+  	var nn = (v.ref + req.caption).length
+  	 console.info(nn)
     var t = (v.ref + "%0A" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
     req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_400,l_${v.pic},w_400/b_rgb:f5e6e4,c_fill,co_black,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_42_center:${t},w_400,y_400/l_n_jp83ut,x_0.16,y_0.16/${req.photo}`;
