@@ -1,4 +1,4 @@
-import "./mid"
+import "./mid.js"
 // src/iinl/html.js
 var require_html = __commonJS({
   "src/iinl/html.js"(exports) {
