@@ -202,7 +202,7 @@ globalThis.Z = async function(r) {
     B.method = "sendphoto";
   }
   if (req.type == "inline_query") {
-    var rrr = await db.list();
+    var rrr = await db.list(req.query);
     var l = rrr.length;
     rrr = await rrr.map(({ ref, date, from, ll, id }, o) => ({
       type: "article",

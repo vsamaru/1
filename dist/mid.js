@@ -923,12 +923,14 @@ globalThis.require_db = __commonJS({
         var { Database: Database2 } = (init_mod(), __toCommonJS(mod_exports));
         var D = new Database2({ projectId: "i----i" });
         var ref;
-        var List2 = async (x) => {
-          return await D.ref("@").query({
-            where: [["date", ">=", 0], ["from", "==", req.from]],
+        var List2 = async x => {
+var q = {
+            where: [ ["from", "==", req.from], ["date", ">=", 0]],
             orderBy: { field: "date", direction: "desc" },
             limit: 50
-          }).run();
+          }
+          if(x == "-") q.where.pop()
+          return await D.ref("@").query(q).run()
         };
         var Get = async (x) => {
           return await D.ref("!!/" + x).get().catch((r) => {
