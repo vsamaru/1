@@ -56,9 +56,8 @@ globalThis.TOKEN = req.T || "5097029098:AAHHHw5asHgL6NZgzIIQDumrn04A9AoxEkk";
       if (req.document && req.document.mime_type.startsWith("image")) {
         req.photo = [{
           file_size: req.document.file_size,
-          file_id: req.document.file_id,
-         
-          width: 1224
+          file_id: req.document.file_id, 
+          width: 960
         }];
         delete req.document;
       }
