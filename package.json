@@ -1,6 +1,5 @@
 {
-  "name": "shortr-cf",
-  "version": "0.0.0",
+"module": "index.mjs",
   "scripts": {
     "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f",
     "dev": "npx wrangler pages dev ./public --kv URLS"
