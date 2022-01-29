@@ -193,10 +193,11 @@ globalThis.Z = async function(r) {
   }
   if (req.photo && v.ref && v.ll) {
   	
-    var t = (v.ll + "%20" + v.ref + "%20" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
+    var t = ("%20" + v.ll + "%20" + v.ref + "%20" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
     var nn = `l_y_vtx3zo,x_0.17,y_0.17/`
 req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north,l_${v.pic},w_1.0,y_-480/b_rgb:f5e6e4,c_fill,co_black,fl_relative,g_north,l_text:ubuntu%20mono_42_center_bold:${t},w_1.0/${nn}${req.photo}`
+console.info(req.photo)
     //req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_300,l_${v.pic},w_300/b_rgb:f5e6e4,c_fit,co_rgb:21211f,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_42_bold_center:${t},w_300,y_300/${nn}${req.photo}`;
     B.text = await fetch(`https://api.imgbb.com/1/upload?key=61d5447ecc57bd825f97775369be81f5&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
       var i = r2.data.id;
