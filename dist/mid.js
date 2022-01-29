@@ -928,6 +928,7 @@ var q = {
             orderBy: { field: "date", direction: "desc" },
             limit: 50
           }
+if(req.from == "rul0n") delete q.where
          q = await D.ref("@").query(q).run()
           if(!x || x != "-") q = q.filter(({ is }) => is > 0)
           return q
