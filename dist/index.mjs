@@ -91,7 +91,7 @@ async function rH(x) {
 	//console.info(x)
 	
 
-  await L.put( req.from,x)
+  
   B.reply_markup = kg;
   this.replyToSender(x);
 }
@@ -265,21 +265,14 @@ var src_default = {
       return new Response((0, import_html.html)(JSON.stringify(request.cf, null, 4)), { headers: {
         "content-type": "text/html"
       } });
-    var { G } = env;
-    L = G;
+    
     try {
      
       await Z(request);
     } catch (err) {
       console.warn(err);
     }
-    try {
-    	console.info(123)
-      var k = await L.get(req.from)
-     console.info(k);
-    } catch (err) {
-      console.warn(err);
-    }
+    
     return new Response(JSON.stringify(B, null, 4), {
       headers: {
         "content-type": "application/json"
