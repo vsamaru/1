@@ -193,7 +193,7 @@ globalThis.Z = async function(r) {
   }
   if (req.photo && v.ref && v.ll) {
   	
-    var t = (req.location + "%20" + v.ref + "%20" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
+    var t = (v.ll + "%20" + v.ref + "%20" +  req.caption).toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
     var nn = `l_y_vtx3zo,x_0.17,y_0.17/`
 req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north,l_${v.pic},w_1.0,y_-480/b_rgb:f5e6e4,c_fill,co_black,fl_relative,g_north,l_text:ubuntu%20mono_42_center_bold:${t},w_1.0/${nn}${req.photo}`
