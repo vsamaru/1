@@ -9,7 +9,7 @@ compatibility_date = "2021-12-26"
 
 [[kv_namespaces]]
 binding = "G"
-id = "8cc4b2e13c7845e99f2d69a6ec48e906"
+id = "91b94bbb376942dc93f770e11ebe3a04"
 
 # [vars]
 # HOOK_PATH = "/"
