@@ -197,7 +197,7 @@ globalThis.Z = async function(r) {
     req.width = req.width > 960 ? req.width : 960
     var nn = `l_y_vtx3zo,x_0.17,y_0.17/`
    // nn = ''
-req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/g_north,l_${v.pic},y_-480/b_rgb:f5e6e4,c_fill,co_black,g_north,l_text:roboto%20mono_96_center_bold:${t},w_960/${nn}${req.photo}`
+req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/fl_relative,g_north,l_${v.pic},y_-480/fl_relative,b_rgb:f5e6e4,c_fill,co_black,g_north,l_text:roboto%20mono_96_center_bold:${t},w_960/fl_relative,${nn}${req.photo}`
 //h
     //req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_300,l_${v.pic},w_300/b_rgb:f5e6e4,c_fit,co_rgb:21211f,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_42_bold_center:${t},w_300,y_300/${nn}${req.photo}`;
     B.text = await fetch(`https://api.imgbb.com/1/upload?key=9245767bac1ebd9783f91024150db0f2&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
