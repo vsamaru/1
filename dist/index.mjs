@@ -63,7 +63,7 @@ async function bot(update) {
 
   	
     B.reply_markup = JSON.stringify({ "remove_keyboard": true });
-    this.replyToSender("wova.1l.workers.dev");
+    this.replyToSender("iinl.ml");
   });
   bus.on(/\/help/, function() {
   
@@ -71,7 +71,7 @@ async function bot(update) {
       "inline_keyboard": [
         [{
           "text": "LINK",
-          "url": `https://t.me/wo_vabot?start=${req.chat}`
+          "url": `https://t.me/iinllbot?start=${req.chat}`
         }]
       ]
     });
