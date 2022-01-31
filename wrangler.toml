@@ -1,6 +1,9 @@
+
 name = "1"
 type = "javascript"
-account_id = "d1574ff4d207bc23602cc79fc78b7b2a"
+#account_id = "d1574ff4d207bc23602cc79fc78b7b2a"
+account_id = "0de3674adef884f16d5803ba28ee6e13"
+
 workers_dev = true
 compatibility_date = "2021-12-26"
 
