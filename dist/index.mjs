@@ -195,7 +195,7 @@ globalThis.Z = async function(r) {
   	
     var t = ("%20" + v.ll + "%20" + v.ref + "%20" +  req.caption + "%20").toUpperCase().replace(/ /g, "%20").replace(/,/g, "%20");
     req.width = req.width > 960 ? req.width : 960
-    var nn = `l_y_vtx3zo,x_0.17,y_-100/`
+    var nn = '/' //`l_y_vtx3zo,x_0.17,y_-100/`
    // nn = ''
 req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/g_north,l_${v.pic},y_-480/b_rgb:f5e6e4,c_fill,co_black,g_north,l_text:roboto%20mono_96_center_bold:${t},w_960/${nn}${req.photo}`
 //h
