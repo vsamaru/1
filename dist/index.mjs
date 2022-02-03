@@ -32,6 +32,28 @@ var require_html = __commonJS({
             <img class="dev_blog_card_image" src="https://telegram.org/file/464001234/e805/Z0pNrCJET-E.104373/a38ce74977bc53b064">
             <div class="dev_blog_card_alltext_wrap">
                <h4 class="dev_blog_card_title">Відеоналіпки, удосконалені реакції та інші нововведення</h4>
+
+   <h3 class="tl_main_recent_news_header">
+      <a href="https://telegram.org/blog">Інші новини</a>
+   </h3>
+   <div class="tl_main_recent_news_cards clearfix">
+      <a class="dev_blog_card_link_wrap" href="https://telegram.org/blog/video-stickers-better-reactions/uk">
+         <div class="dev_blog_card_wrap">
+            <img class="dev_blog_card_image" src="https://telegram.org/file/464001234/e805/Z0pNrCJET-E.104373/a38ce74977bc53b064">
+            <div class="dev_blog_card_alltext_wrap">
+               <h4 class="dev_blog_card_title">Відеоналіпки, удосконалені реакції та інші нововведення</h4>
+               <div class="dev_blog_card_lead">У новій версії з'явилися відеоналіпки, удосконалені реакції з компактнішою анімацією та ширшим вибором емодзі, кнопка для перевірки нових…</div>
+            </div>
+
+   <h3 class="tl_main_recent_news_header">
+      <a href="https://telegram.org/blog">Інші новини</a>
+   </h3>
+   <div class="tl_main_recent_news_cards clearfix">
+      <a class="dev_blog_card_link_wrap" href="https://telegram.org/blog/video-stickers-better-reactions/uk">
+         <div class="dev_blog_card_wrap">
+            <img class="dev_blog_card_image" src="https://telegram.org/file/464001234/e805/Z0pNrCJET-E.104373/a38ce74977bc53b064">
+            <div class="dev_blog_card_alltext_wrap">
+               <h4 class="dev_blog_card_title">Відеоналіпки, удосконалені реакції та інші нововведення</h4>
                <div class="dev_blog_card_lead">У новій версії з'явилися відеоналіпки, удосконалені реакції з компактнішою анімацією та ширшим вибором емодзі, кнопка для перевірки нових…</div>
             </div>
             <div class="dev_blog_card_date">31 січня 2022</div>
@@ -68,7 +90,7 @@ var require_html = __commonJS({
          </div>
       </a>
    </div>
-</div>
+
 </related>
     </article>
 
