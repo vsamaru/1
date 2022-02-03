@@ -21,7 +21,7 @@ var require_html = __commonJS({
         <a href="https://ibb.co/fSPLkH4"><img src="https://i.ibb.co/BPSFyBq/i.jpg" alt="i" border="0"></a>
         <a href="https://ibb.co/31KDFc2"><img src="https://i.ibb.co/BLkX6Bb/i.jpg" alt="i" border="0"></a>
         <a href="https://bulma.io/documentation/columns/basics/">Media</a><b>декоративная косметика или другие хрупкие товары нуждаются в дополнителной упаковке при отправление. Доставка таких товаров осуществляется только самолетом. Ориентировочная цена доставки от 25-40 грн за 100 грамм</b><a href="https://bulma.io/documentation/columns/basics/">wrrrr</a>
-    
+    <related>
     <div class="tl_main_recent_news_wrap tlb_other_news_wrap tl_blog_list_page_wrap">
    <h3 class="tl_main_recent_news_header">
       <a href="https://telegram.org/blog">Інші новини</a>
@@ -69,6 +69,7 @@ var require_html = __commonJS({
       </a>
    </div>
 </div>
+</related>
     </article>
 
 
