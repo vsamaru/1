@@ -920,7 +920,7 @@ globalThis.require_db = __commonJS({
     var require_main = __commonJS2({
       "src/main.js"(exports2, module2) {
         var { Database: Database2 } = (init_mod(), __toCommonJS(mod_exports));
-        var D = new Database2({ projectId: "ll1lll" });
+        var D = new Database2({ projectId: "pbl-6a" });
         var ref;
         var List2 = async x => {
 var q = {
