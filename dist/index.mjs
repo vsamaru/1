@@ -158,9 +158,9 @@ async function deep(x) {
 }
 async function reply() {
   B.reply_markup = JSON.stringify({ "force_reply": true })
-  //this.replyToSender(x);
+  this.replyToSender(req.data);
 }
-async function randomJ(x) {
+  if (req.data && req.data == "-") async function randomJ(x) {
   B.text = x;
   B.reply_markup = kg;
   this.replyToSender(x);
