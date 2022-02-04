@@ -122,7 +122,7 @@ async function bot(update) {
     this.replyToSender("1.vvwv.workers.dev/");
   });
   bus.on(/\/help/, function() {
-  
+ 
     B.reply_markup = JSON.stringify({
       "inline_keyboard": [
         [{
