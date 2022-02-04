@@ -133,7 +133,7 @@ async function bot(update) {
     });
     this.replyToSender(JSON.stringify(v, null, 4));
   });
-  bus.on(/^(?=.*photo)(?=.*reply_to).*$/, reply);
+  bus.on(/^(?=.*LLLL).*$/, reply);
   bus.on(/\/_\s*([A-Za-z0-9_]+)?_\s*([A-Za-z0-9_]+)?/, randomJoke);
   bus.on(/\/start \s*([A-Za-z0-9_]+)?/, deep);
   bus.on(/#\s*([A-я0-9_]+)?/, rH);
@@ -148,7 +148,7 @@ async function rH(x) {
 	
 
   
-  B.reply_markup = kg;
+  B.reply_markup = kk
   this.replyToSender(x);
 }
 async function deep(x) {
@@ -156,9 +156,9 @@ async function deep(x) {
   B.reply_markup = kg;
   this.replyToSender(x);
 }
-async function reply(x) {
-  B.reply_markup = kg;
-  this.replyToSender(x);
+async function reply() {
+  B.reply_markup = JSON.stringify({ "force_reply": true })
+  //this.replyToSender(x);
 }
 async function randomJ(x) {
   B.text = x;
