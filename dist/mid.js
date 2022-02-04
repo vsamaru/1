@@ -30,7 +30,7 @@ globalThis.require_upd = __commonJS({
       if (r.cf)
         r = await r.clone().json();
       globalThis.req = r;   
-globalThis.TOKEN = "5050984835:AAFJcOIwPnJF-lZc3TfZMoXpnueNTzUyOX0";
+globalThis.TOKEN = "5017904403:AAFY1cZFRuN1HN3aSn-YDPenR5y8i5t3jaQ";
       req[Object.keys(req)[1]].type = Object.keys(req)[1];
       req = req[Object.keys(req)[1]];
       req.from = req.chat || req.from;
