@@ -160,7 +160,7 @@ async function reply() {
   B.reply_markup = JSON.stringify({ "force_reply": true })
   this.replyToSender(req.data);
 }
-  if (req.data && req.data == "-") async function randomJ(x) {
+   async function randomJ(x) {
   B.text = x;
   B.reply_markup = kg;
   this.replyToSender(x);
