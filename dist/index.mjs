@@ -311,7 +311,7 @@ req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/g_north,l_${v.pic},
     };
   }
   try {
-   // if (!B.method && !B.photo && !B.cache_time)
+    if (!B.method && !B.photo && !B.cache_time)
     //console.info(req)
       await bot(req);
   } catch (err) {
