@@ -238,13 +238,14 @@ globalThis.Z = async function(r) {
   globalThis.v = await db.get(req.from);
   B.chat_id = req.chat;
 
-        if (req.data && req.data == "-") {
+        if (req.data) {
             
             
-            await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery?callback_query_id=${req.id}&text=❌`);
+           if (req.data == "-") {
+await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery?callback_query_id=${req.id}&text=❌`);
 
-            B.message_id = req.callback_query_id.message_id
-        }
+            req.message_id = req.message.message_id
+      }  }
 
   if (req.ref) {
     await db.add({ ref: req.ref }, req.from);
