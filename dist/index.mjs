@@ -238,7 +238,7 @@ globalThis.Z = async function(r) {
   globalThis.v = await db.get(req.from);
   B.chat_id = req.chat;
 
-        if (re.data && re.data == "-") {
+        if (req.data && req.data == "-") {
             
             
             await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery?callback_query_id=${req.id}&text=❌`);
