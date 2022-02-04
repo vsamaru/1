@@ -98,8 +98,8 @@ var kk = JSON.stringify({
       "text": ":RE",
       "switch_inline_query_current_chat": ""
     }, {
-      "text": "LL",
-      "callback_data": "LL"
+      "text": "-",
+      "callback_data": "-"
     }, {
       "text": "D",
       "switch_inline_query_current_chat": "D"
@@ -237,6 +237,15 @@ globalThis.Z = async function(r) {
   //   return new Response(console.warn(req), { status: 200 });
   globalThis.v = await db.get(req.from);
   B.chat_id = req.chat;
+
+        if (re.data && re.data == "-") {
+            
+            
+            await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery?callback_query_id=${req.id}&text=❌`);
+
+            B.message_id = req.callback_query_id.message_id
+        }
+
   if (req.ref) {
     await db.add({ ref: req.ref }, req.from);
   }
