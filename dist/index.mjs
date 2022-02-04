@@ -27,34 +27,34 @@ var require_html = __commonJS({
    <a href="https://telegram.org/blog">Інші новини</a>
 </h3>
 <a class="dev_blog_card_link_wrap" href="https://telegram.org/blog/video-stickers-better-reactions/uk">
-   <div class="dev_blog_card_wrap">
+   
       <img class="dev_blog_card_image" src="https://telegram.org/file/464001234/e805/Z0pNrCJET-E.104373/a38ce74977bc53b064">
-      <div class="dev_blog_card_alltext_wrap">
+     
          <h4 class="dev_blog_card_title">Відеоналіпки, удосконалені реакції та інші нововведення</h4>
          <div class="dev_blog_card_lead">У новій версії з'явилися відеоналіпки, удосконалені реакції з компактнішою анімацією та ширшим вибором емодзі, кнопка для перевірки нових…</div>
-      </div>
+     
       <div class="dev_blog_card_date">31 січня 2022</div>
-   </div>
+  
 </a>
 <a class="dev_blog_card_link_wrap" href="https://telegram.org/blog/reactions-spoilers-translations/uk">
-   <div class="dev_blog_card_wrap">
+   
       <img class="dev_blog_card_image" src="https://telegram.org/file/464001488/d35b/oNi_rR0In0o.124097/c74f7d759893b78bfb">
-      <div class="dev_blog_card_alltext_wrap">
+      
          <h4 class="dev_blog_card_title">Реакції, спойлери, переклад повідомлень та QR-коди</h4>
          <div class="dev_blog_card_lead">Дванадцяте оновлення Telegram за цей рік приносить у месенджер реакції, переклад повідомлень, персоналізовані QR-коди, прихований текст…</div>
-      </div>
+    
       <div class="dev_blog_card_date">30 грудня 2021</div>
-   </div>
+   
 </a>
 <a class="dev_blog_card_link_wrap" href="https://telegram.org/blog/protected-content-delete-by-date-and-more/uk">
-   <div class="dev_blog_card_wrap">
+   
       <img class="dev_blog_card_image" src="https://telegram.org/file/464001572/2/u_lvhH-CjJ0.99595/a7fca60f9c9e6e193c">
-      <div class="dev_blog_card_alltext_wrap">
+     
          <h4 class="dev_blog_card_title">Захист повідомлень, видалення за датою, керування пристроями та інші нововведення</h4>
          <div class="dev_blog_card_lead">У новій версії з'явився спосіб захистити вміст у групах та каналах від копіювання, можливість…</div>
-      </div>
+      
       <div class="dev_blog_card_date">7 грудня 2021</div>
-   </div>
+   
 </a>
 <a class="dev_blog_card_link_wrap" href="https://telegram.org/blog/shared-media-scrolling-calendar-join-requests-and-more/uk">
    <div class="dev_blog_card_wrap">
