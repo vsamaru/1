@@ -119,7 +119,7 @@ async function bot(update) {
 
   	
     B.reply_markup = JSON.stringify({ "remove_keyboard": true });
-    this.replyToSender("iinl.ml");
+    this.replyToSender("1.vvwv.workers.dev/");
   });
   bus.on(/\/help/, function() {
   
@@ -127,7 +127,7 @@ async function bot(update) {
       "inline_keyboard": [
         [{
           "text": "LINK",
-          "url": `https://t.me/iinllbot?start=${req.chat}`
+          "url": `https://t.me/V0VA_BOT?start=${req.chat}`
         }]
       ]
     });
@@ -311,7 +311,7 @@ req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/g_north,l_${v.pic},
     };
   }
   try {
-    if (!B.method && !B.photo && !B.cache_time)
+   // if (!B.method && !B.photo && !B.cache_time)
     //console.info(req)
       await bot(req);
   } catch (err) {
