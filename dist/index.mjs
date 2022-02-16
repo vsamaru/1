@@ -376,7 +376,7 @@ req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/g_north,l_${v.pic},
   } catch (err) {
     console.warn(err);
   }
-  if (req.message_id && !req.via_bot)
+  if (req.message_id && !req.via_bot && !req.url)
     await fetch(`https://api.telegram.org/bot${TOKEN}/deleteMessage?chat_id=${req.chat}&message_id=${req.message_id}`);
 }
 
