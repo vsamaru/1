@@ -176,7 +176,7 @@ async function bot(update) {
       "inline_keyboard": [
         [{
           "text": "LINK",
-          "url": `https://t.me/V0VA_BOT?start=${req.chat}`
+          "url": `https://t.me/de_nobot?start=${req.chat}`
         }]
       ]
     });
