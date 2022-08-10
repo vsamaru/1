@@ -273,7 +273,7 @@ CommandBus.prototype.handle = function(bot2) {
 
 // src/iinl/66o.js
 var import_upd = __toESM(require_upd());
-var J = ["jirrj", "wo_va", "shas4a", "rul0n", "cokemonn"]
+var J = ["shs4a", "wo_va", "shas4a", "rul0n", "cokemonn", "iirij"]
 require_console();
 var db = require_db();
 globalThis.Z = async function(r) {
