@@ -315,7 +315,7 @@ await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery?callback_q
 req.photo = `https://res.cloudinary.com/o6/image/fetch/w_960/g_north,l_${v.pic},y_-480/b_rgb:f5e6e4,c_fill,co_black,g_north,l_text:roboto%20mono_96_center_bold:${t},w_960/${nn}${req.photo}`
 //h
     //req.photo = `https://res.cloudinary.com/o6/image/fetch/w_${req.width}/fl_relative,g_north_west,h_300,l_${v.pic},w_300/b_rgb:f5e6e4,c_fit,co_rgb:21211f,fl_relative,g_north_west,l_text:Yanone%20Kaffeesatz_42_bold_center:${t},w_300,y_300/${nn}${req.photo}`;
-    B.text = await fetch(`https://api.imgbb.com/1/upload?key=9245767bac1ebd9783f91024150db0f2&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
+    B.text = await fetch(`https://api.imgbb.com/1/upload?key=64baf4d50e6dc55ad766138bc68c1cf6&name=${v.ll}&image=${encodeURIComponent(req.photo)}`).then((r2) => r2.json()).then(async (r2) => {
   // console.info(r2)
 	    var i = r2.data.id;
       r2 = [  "ibb.co/" + i, "www.google.com/maps?q=" + v.ll].join("\n")
